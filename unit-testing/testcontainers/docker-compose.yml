@@ -1,0 +1,25 @@
+version: '3.8'
+services:
+  db:
+    image: mysql:latest
+    cap_add:
+      - SYS_NICE
+    restart: always
+    environment:
+      - MYSQL_DATABASE=root
+      - MYSQL_ROOT_PASSWORD=mysql123
+    ports:
+      - '3307:3306'
+  cache:
+    image: redis:7.2.2-alpine
+    restart: always
+    ports:
+      - '6379:6379'
+    volumes:
+      - cache:/data
+volumes:
+  db:
+    driver: local
+  cache:
+    driver: local
+

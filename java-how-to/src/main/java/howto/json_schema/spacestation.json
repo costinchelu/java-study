@@ -1,0 +1,17 @@
+{
+  "name": "test name",
+  "population": 120,
+  "active": false,
+  "plants": [
+    {
+      "plantname": "plant1",
+      "poisonous": false,
+      "leaves": 4
+    },
+    {
+      "plantname": "plant2",
+      "poisonous": true,
+      "plantprice": 45.2
+    }
+  ]
+}

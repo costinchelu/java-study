@@ -1,0 +1,68 @@
+MULTITHREADING = CPU executes multiple processes or threads concurrently
+
+PROCESS = an instance of program execution (the OS assigns distinct registers, stack and heap memory to every process)
+every process have a PID (process identifier) and memory allocated
+
+THREAD = is a unit of execution within a given process (so a process may have several threads)
+each thread in a process shares the memory and resources and
+this is why programmers have to deal with concurrent programming and multithreading
+
+The typical difference between PROCESSES and THREADS (of the same process) run in a shared memory space,
+while processes run in separate memory spaces.
+
+STACK -> local variables, method arguments, method calls (small, fast)
+HEAP -> objects (live as long as are referenced from somewhere in the application) (large, slower)
+
+Every thread has its own stack memory but all threads share the heap memory (shared memory space).
+So every local variable inside a thread are not a concern because threads have their own stack.
+
+The main purpose of synchronization is the sharing of resources without interference using mutual exclusion
+
+
+BENEFITS:
+- responsive applications
+- use more than one processor core
+- improved performance
+
+
+STATES OF A THREAD:
+
+- NEW = thread created
+- RUNNABLE = thread started with the start() method
+- WAITING = thread is waiting (using wait() or sleep() methods)
+- DEAD = thread has finished doing all operations from it's run() method
+
+
+--
+Every object has an INTRINSIC LOCK - that means if a thread want access to one of the object's fields it needs to
+lock the object before accessing the field. When it is done, it will release the lock. Because of this monitor lock
+no 2 threads can execute the same synchronized method at the same time.
+
+
+DIFFERENCE BETWEEN SLEEP AND WAIT:
+- you call wait on the Object while on the other hand you call sleep on the Thread itself
+- wait can be interrupter (this is why we need the InterruptedException) while on the other hand sleep can not
+- wait (and notify) must happen in a synchronized  block on the monitor object whereas sleep does not
+- sleep operation does not release the locks it holds while on the other hand wait releases the lock
+on the object that wait() is called on
+
+
+DIFFERENCES BETWEEN A LOCK AND A SYNCHRONIZED BLOCK:
+- synchronized are unfair by default but in case of locks, we can make them fair
+- we can check if a given lock is held or not
+- we can get a list of threads that are waiting for the given lock
+
+
+LIVELOCK VS DEADLOCKS
+DEADLOCKS:
+- when two or more threads wait forever for a lock or resource held by another thread
+- two or more competing actions are each waiting for the other to finish and thus neither ever does
+
+LIVELOCKS:
+- one of the threads acts in response to the action of another thread and the other also acts in response to
+the action of the first one
+- both threads are too busy responding each other so they will not resume work
+
+- we can use Lock's interface's tryLock() method
+- make sure that each thread acquires the locks in the same order to avoid any cyclic dependency in lock acquisition
+- livelocks can be also treated by acquiring locks at random intervals

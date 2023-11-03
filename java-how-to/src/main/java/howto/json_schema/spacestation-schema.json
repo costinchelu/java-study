@@ -1,0 +1,46 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://thisdomain.doesnotexist/spacestation",
+  "title": "Spacestation Schema",
+  "description": "some description",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 20
+    },
+    "population": {
+      "type": "integer",
+      "description": "population description",
+      "exclusiveMinimum": 100,
+      "exclusiveMaximum": 10000
+    },
+    "active": {
+      "type": "boolean"
+    },
+    "plants": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "plantname": {
+            "type": "string"
+          },
+          "leaves": {
+            "type": "integer"
+          },
+          "poisonous": {
+            "type": "boolean"
+          },
+          "plantprice": {
+            "type": "number"
+          }
+        },
+        "required": [
+          "plantname", "poisonous"]
+      }
+    }
+  },
+  "required": ["name", "population", "active", "plants"]
+}

@@ -1,0 +1,96 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+        table, th, tr, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            text-align:center;
+        }
+    </style>
+</head>
+<body>
+<p>
+    <i>** This is a system generated mail. Please do not respond. **</i>
+</p>
+
+<p>Hi Team,</p>
+<p>
+    InterCard Confirmation/Outbound file <B>${fileName}</B> has mismatch in data field(s):
+</p>
+
+<div style="width: 100%">
+
+    <table style="width:70%; margin-left: auto; margin-right: auto">
+        <tr>
+            <th>No</th>
+            <th>Reference</th>
+            <th>Field Name</th>
+            <th>Expected</th>
+            <th>Actual</th>
+        </tr>
+        #set($i = 0)
+        #foreach ($mapKey in $bar.keySet())
+            #set($i = $i+1)
+            #foreach($sublist in ${bar.get($mapKey)})
+                <tr>
+                        #if($foreach.count == 1)
+                            <td rowspan=$bar.get($mapKey).size() >$i</td>
+                            <td rowspan=$bar.get($mapKey).size() >$mapKey</td>
+                        #end
+                    <td >$sublist.errorDescription</td>
+                    <td >$sublist.expected</td>
+                    <td >$sublist.actual</td>
+                </tr>
+            #end
+            #end
+    </table>
+
+</div>
+
+<div style="margin-top:30px">
+    <p>
+        Regards, <br>
+        Verifone Inc.
+    </p>
+</div>
+</body>
+</html>
+
+
+##<div style="width: 100%">
+##    <table style="width:70%; text-align:center; margin-left: auto; margin-right: auto; border-collapse: collapse;">
+##        <tr>
+##            <th>No</th>
+##            <th>Reference<th>
+##            <th>Field Name</th>
+##            <th>Expected</th>
+##            <th>Actual</th>
+##        </tr>
+##        #foreach ($mapEntry in $bar.entrySet())
+##        <tr>
+##            <td >$velocityCount</td>
+##            <td >$mapEntry.key</td>
+##            #foreach ($sublist in $mapEntry.value)
+##
+##                <td></td>
+##                <td >$sublist.errorDescription</td>
+##                <td >$sublist.expected</td>
+##                <td >$sublist.actual</td>
+##                <tr></tr>
+##                <td></td>
+##                <td></td>
+##            #end
+##            </tr>
+##        #end
+##    </table>
+##</div>
+##
+##<div style="margin-top:30px">
+##    <p>
+##        Regards, <br>
+##        Verifone Inc.
+##    </p>
+##</div>
+##</body>
+##</html>

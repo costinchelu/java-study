@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>ro.ccar</groupId>
+        <artifactId>java-general-repo</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>maven-course</artifactId>
+    <packaging>pom</packaging>
+
+    <properties>
+        <java.version>17</java.version>
+        <maven.compiler.source>${java.version}</maven.compiler.source>
+        <maven.compiler.target>${java.version}</maven.compiler.target>
+    </properties>
+
+    <modules>
+        <module>c1-hello-world</module>
+        <module>c2-jaxb</module>
+        <module>c2-json-schema</module>
+        <module>c2-mapstruct</module>
+        <module>c3-groovy</module>
+        <module>c3-kotlin</module>
+        <module>c3-scala</module>
+        <module>c4-integration-tests</module>
+        <module>c4-jacoco</module>
+        <module>c4-junit4</module>
+        <module>c4-junit4and5</module>
+        <module>c4-junit5</module>
+        <module>c4-pojo</module>
+        <module>c4-testng</module>
+        <module>c5-bom-dependency-management</module>
+        <module>c5-enforcer-plugin</module>
+        <module>c5-flatten-plugin</module>
+    </modules>
+
+</project>

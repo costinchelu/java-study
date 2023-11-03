@@ -1,0 +1,3 @@
+security.provider.1=sun.security.provider.Sun
+security.provider.2=sun.security.rsa.SunRsaSign
+security.provider.3=org.bouncycastle.jce.provider.BouncyCastleProvider

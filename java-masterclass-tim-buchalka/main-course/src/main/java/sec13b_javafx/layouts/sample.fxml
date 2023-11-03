@@ -1,0 +1,114 @@
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.TilePane?>
+<?import javafx.scene.layout.StackPane?>
+
+<!--  I  -->
+
+<!--<GridPane-->
+        <!--fx:controller="layoutsStudy.Controller"-->
+        <!--xmlns:fx="http://javafx.com/fxml" alignment="top_center" hgap="10" vgap="10"-->
+        <!--gridLinesVisible="false">-->
+    <!--<padding>-->
+        <!--<Insets top="10"/>-->
+    <!--</padding>-->
+    <!--&lt;!&ndash;<columnConstraints>&ndash;&gt;-->
+        <!--&lt;!&ndash;<ColumnConstraints percentWidth="50.0"/>&ndash;&gt;-->
+        <!--&lt;!&ndash;<ColumnConstraints percentWidth="50.0"/>&ndash;&gt;-->
+    <!--&lt;!&ndash;</columnConstraints>&ndash;&gt;-->
+
+        <!--<Button text="Button One" GridPane.rowIndex="0" GridPane.columnIndex="0"-->
+            <!--GridPane.halignment="RIGHT"/>-->
+        <!--<Button text="Longer Button Two" GridPane.rowIndex="0" GridPane.columnIndex="1"/>-->
+        <!--<Button text="Button Three" GridPane.rowIndex="1" GridPane.columnIndex="0"/>-->
+        <!--<Button text="Really Long Button Four" GridPane.rowIndex="3" GridPane.columnIndex="0"-->
+        <!--GridPane.columnSpan="2"/>-->
+        <!--<Button text="Button Five" GridPane.rowIndex="2" GridPane.columnIndex="0"/>-->
+<!--</GridPane>-->
+
+
+<!--  II  -->
+
+<!--Commonly used in a dialog situation -->
+<!--VBox is similar, the layout being arranged vertically -->
+<!--<HBox-->
+        <!--fx:controller="layoutsStudy.Controller"-->
+        <!--xmlns:fx="http://javafx.com/fxml" alignment="BOTTOM_RIGHT"-->
+        <!--style="-fx-border-color: #e06cff; -fx-border-width: 3; -fx-border-style: dashed"-->
+        <!--spacing="10">-->
+
+    <!--<padding>-->
+        <!--<Insets bottom="10" right="10"/>-->
+    <!--</padding>-->
+
+        <!--<Button text="OK" style="-fx-border-color: chartreuse" prefWidth="90"/>-->
+        <!--<Button text="Cancel" prefWidth="90"/>-->
+        <!--<Button text="Help" prefWidth="90"/>-->
+<!--</HBox>-->
+
+
+<!--  III  -->
+
+
+<!--<BorderPane fx:controller="layoutsStudy.Controller"-->
+            <!--xmlns:fx="http://javafx.com/fxml">-->
+    <!--<top>-->
+        <!--<Label text="This label is in the top position" alignment="CENTER"-->
+               <!--BorderPane.alignment="CENTER"-->
+               <!--style="-fx-border-color: blue; -fx-border-width: 3; -fx-border-style: dashed"/>-->
+    <!--</top>-->
+    <!--<center>-->
+        <!--<Label text="This label is in the center position and it has really          long text!"/>-->
+    <!--</center>-->
+    <!--<left>-->
+        <!--<Label text="This label is in the left position" alignment="CENTER"/>-->
+    <!--</left>-->
+    <!--<right>-->
+        <!--<Label text="This label is in the right position"/>-->
+    <!--</right>-->
+    <!--<bottom>-->
+        <!--<HBox spacing="10" alignment="TOP_RIGHT">-->
+            <!--<padding>-->
+                <!--<Insets bottom="10" right="10"/>-->
+            <!--</padding>-->
+            <!--<Button text="OK" prefWidth="90"/>-->
+            <!--<Button text="Cancel" prefWidth="90"/>-->
+            <!--<Button text="Help" prefWidth="90"/>-->
+        <!--</HBox>-->
+    <!--</bottom>-->
+<!--</BorderPane>-->
+
+
+<!--  IV  -->
+
+
+
+<!--<FlowPane fx:controller="layoutsStudy.Controller"-->
+          <!--xmlns:fx="http://javafx.com/fxml" orientation="HORIZONTAL">-->
+    <!--<Button text="Button 01"/>-->
+    <!--<Button text="Button 02"/>-->
+    <!--<Button text="Button 03"/>-->
+    <!--<Button text="Button 04"/>-->
+    <!--<Button text="Button 05"/>-->
+    <!--<Button text="Button 06"/>-->
+    <!--<Button text="Button 07"/>-->
+    <!--<Button text="Button 08"/>-->
+    <!--<Button text="Button 09"/>-->
+    <!--<Button text="Button 10"/>-->
+<!--</FlowPane>-->
+
+
+<!--  V  -->
+
+
+<StackPane fx:controller="sec13b_javafx.layouts.Controller"
+          xmlns:fx="http://javafx.com/fxml">
+    <Label text="Text label" style="-fx-background-color: green"/>
+    <Button text="Button 01" style="-fx-background-color: red"/>
+</StackPane>

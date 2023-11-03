@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>ro.ccar</groupId>
+        <artifactId>java-general-repo</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>unit-testing</artifactId>
+    <packaging>pom</packaging>
+
+    <modules>
+        <module>junit5-demo</module>
+        <module>testcontainers</module>
+        <module>mockito-and-junit-5-demo-1</module>
+        <module>mockito-and-junit-5-demo-2</module>
+        <module>mockito-spring-boot</module>
+        <module>mockito-boot-mvc</module>
+        <module>test-ng-with-mockito</module>
+    </modules>
+
+    <properties>
+        <java.version>17</java.version>
+        <maven.compiler.source>${java.version}</maven.compiler.source>
+        <maven.compiler.target>${java.version}</maven.compiler.target>
+    </properties>
+
+</project>
