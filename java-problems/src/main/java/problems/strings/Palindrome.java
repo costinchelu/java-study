@@ -25,3 +25,17 @@ public class Palindrome {
       return true;
    }
 }
+
+class ReverseString {
+
+   public static String reverseTheString(String text) {
+      return new StringBuilder().append(text).reverse().toString();
+   }
+
+   public static void main(String[] args) {
+      String test = "test";
+      String test2 = "tesT2Tset";
+      System.out.println(test.equals(reverseTheString(test)));
+      System.out.println(test2.equals(reverseTheString(test2)));
+   }
+}

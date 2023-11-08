@@ -9,7 +9,7 @@ import java.util.stream.Collectors;
 /**
 * Count occurences of words in a string ignoring caps or other characters than literals
  */
-public class CountWordOccurence {
+public class CountWordOccurrence {
 
    public static void main(String[] args) {
 
@@ -19,7 +19,7 @@ public class CountWordOccurence {
       List<String> split3 =
               Arrays.stream(sir2.split(" ")).
                       map(str -> str.replaceAll("[^A-Za-z]+", "").toLowerCase(Locale.ROOT)).
-                      collect(Collectors.toList());
+                      toList();
       for (String s : split3) {
          map.put(s, 0);
       }
