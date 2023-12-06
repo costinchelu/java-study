@@ -11,8 +11,7 @@ public class MainDemoApp {
     public static void main(String[] args) {
 
         // read Spring config Java Class
-        AnnotationConfigApplicationContext context =
-                new AnnotationConfigApplicationContext(DemoConfig.class);
+        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(DemoConfig.class);
 
 
         // getting bean from Spring container

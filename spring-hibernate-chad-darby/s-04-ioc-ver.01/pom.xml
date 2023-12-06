@@ -16,7 +16,7 @@
     <properties>
         <logback.version>1.4.8</logback.version>
         <spring.version>5.2.8.RELEASE</spring.version>
-        <java.version>17</java.version>
+        <java.version>21</java.version>
     </properties>
 
     <dependencyManagement>

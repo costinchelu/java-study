@@ -16,7 +16,7 @@
 	<properties>
 		<springframework.version>5.0.2.RELEASE</springframework.version>
 		<springsecurity.version>5.0.0.RELEASE</springsecurity.version>
-		<java.version>17</java.version>
+		<java.version>21</java.version>
 		<maven.compiler.source>${java.version}</maven.compiler.source>
 		<maven.compiler.target>${java.version}</maven.compiler.target>
 	</properties>
