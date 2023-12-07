@@ -1,4 +1,4 @@
-package howto;
+package miniservices;
 
 import java.io.BufferedReader;
 import java.io.IOException;

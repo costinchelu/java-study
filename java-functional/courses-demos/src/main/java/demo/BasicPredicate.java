@@ -18,7 +18,6 @@ public class BasicPredicate {
         numbers.stream().filter(x -> x % 2 != 0).forEach(System.out::println);
 
         // the two operations are pretty similar...
-
         Predicate<Integer> evenPredicate = x -> x % 2 == 0;
         Predicate<Integer> oddPredicate = x -> x % 2 != 0;
 
