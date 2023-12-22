@@ -5,6 +5,9 @@ import java.util.List;
 
 import static java.util.stream.Collectors.toList;
 
+/**
+ * {@code public <R> Stream<R> flatMap(Function<? super T, ? extends Stream<? extends R>> mapper)}
+ */
 public class IntermediateOpFlatMap {
 
     public static void main(String[] args) {

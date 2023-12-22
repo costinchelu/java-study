@@ -5,6 +5,7 @@ import java.util.IntSummaryStatistics;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
+import java.util.Set;
 import java.util.TreeMap;
 import java.util.TreeSet;
 import java.util.function.Function;
@@ -23,7 +24,16 @@ import static java.util.stream.Collectors.summarizingInt;
 import static java.util.stream.Collectors.summingInt;
 import static java.util.stream.Collectors.toCollection;
 import static java.util.stream.Collectors.toList;
+import static java.util.stream.Collectors.toSet;
 
+/**
+ * The groupingBy() collector tells collect() that it should group all of the elements of
+ * the stream into a Map. The function determines the keys in the Map. Each value in the Map is
+ * a List of all entries that match that key.
+ * <br>
+ * Note that the function you call in groupingBy() cannot return null. It
+ * does not allow null keys.
+ */
 public class GroupingStringExamples {
 
     public static void main(String[] args) {
@@ -45,31 +55,37 @@ public class GroupingStringExamples {
     }
 
     private static void example1(List<String> strings) {
-        Map<Integer, List<String>> result = strings.stream()
+        Map<Integer, List<String>> e1 = strings.stream()
                 .collect(groupingBy(String::length));
 
-        System.out.println(result); // {1=[a], 2=[bb, cc], 3=[ddd]}
+        System.out.println(e1.getClass() + " >> " + e1); // {1=[a], 2=[bb, cc], 3=[ddd]}
     }
 
+    /*
+    Suppose that we don’t want a List as the value in the map and prefer a Set instead.
+    There’s another method signature that lets us pass a downstream collector.
+    This is a second collector that does something special with the values.
+     */
     private static void example2(List<String> strings) {
-        Map<Integer, TreeSet<String>> result = strings.stream()
+        Map<Integer, TreeSet<String>> e2 = strings.stream()
                 .collect(groupingBy(String::length, toCollection(TreeSet::new)));
 
-        System.out.println(result); // {1=[a], 2=[bb, cc], 3=[ddd]}
+        System.out.println(e2.getClass() + " >> " + e2); // {1=[a], 2=[bb, cc], 3=[ddd]}
     }
 
+    // We can even change the type of Map returned through yet another parameter.
     private static void example3(List<String> strings) {
-        TreeMap<Integer, List<String>> result = strings.stream()
-                .collect(groupingBy(String::length, TreeMap::new, toList()));
+        TreeMap<Integer, Set<String>> e3 = strings.stream()
+                .collect(groupingBy(String::length, TreeMap::new, Collectors.toSet()));
 
-        System.out.println(result); // {1=[a], 2=[bb, cc], 3=[ddd]}
+        System.out.println(e3.getClass() + " >> " + e3); // {1=[a], 2=[bb, cc], 3=[ddd]}
     }
 
     private static void example4(List<String> strings) {
-        Map<Integer, Long> result = strings.stream()
+        Map<Integer, Long> e4 = strings.stream()
                 .collect(groupingBy(String::length, counting()));
 
-        System.out.println(result); // {1=1, 2=2, 3=1}
+        System.out.println(e4.getClass() + " >> " + e4); // {1=1, 2=2, 3=1}
     }
 
     private static void example5(List<String> strings) {

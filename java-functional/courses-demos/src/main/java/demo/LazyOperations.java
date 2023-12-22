@@ -2,6 +2,8 @@ package demo;
 
 import model.CourseRepo;
 
+import java.util.ArrayList;
+
 /**
  * Lazy operations
  <p></p>
@@ -27,5 +29,13 @@ public class LazyOperations {
 
         System.out.println("-----------------------------result:");
         System.out.println(result.orElse("NO RESULT"));
+
+
+        var cats = new ArrayList<String>();
+        cats.add("Annie");
+        cats.add("Ripley");
+        var stream = cats.stream();
+        cats.add("KC");
+        System.out.println(stream.count());  // the answer is 3. Because stream operations are lazy, so the stream will be evaluated when the count() is called
     }
 }

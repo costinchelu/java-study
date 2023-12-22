@@ -2,7 +2,6 @@ package howto.optionals;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import java.util.List;
@@ -15,12 +14,35 @@ public class OptionalDemo2 {
 
     public static void main(String[] args) {
         OptionalDemo2 demo = new OptionalDemo2();
+
+        Optional<Object> empty = Optional.empty();
+        Optional<Integer> intOptional = Optional.of(95);
+        Optional<Double> average1 = average();
+        Optional<Double> average2 = average(10, 10, 9);
+
+//        if (average1.isPresent())
+//            System.out.println(average1);
+
+        average1.ifPresent(System.out::println);
+        average2.ifPresent(System.out::println);
+        System.out.println(average1.orElse(Double.NaN));
+
+        double value = 0;
+        Optional<Double> value1 = Optional.ofNullable(value);
+        value1.ifPresent(System.out::println);
+    }
+
+    public static Optional<Double> average(int... scores) {
+        if (scores.length == 0) return Optional.empty();
+        int sum = 0;
+        for (int score : scores) sum += score;
+        return Optional.of((double) sum / scores.length);
     }
 
     public String getCarInsuranceName(Optional<Person> person) {
         return person.flatMap(Person::getCar)
                 .flatMap(Car::getInsurance)
-                .map(Insurance::getName)
+                .map(Insurance::name)
                 .orElse("Unknown");
     }
 
@@ -28,16 +50,21 @@ public class OptionalDemo2 {
         return persons.stream()
                 .map(Person::getCar)
                 .map(optCar -> optCar.flatMap(Car::getInsurance))
-                .map(optInsurance -> optInsurance.map(Insurance::getName))
+                .map(optInsurance -> optInsurance.map(Insurance::name))
                 .flatMap(Optional::stream)
                 .collect(toSet());
     }
+
+    // optional chaining
+    private static void threeDigit(Optional<Integer> optional) {
+        optional.map(n -> "" + n)
+                .filter(s -> s.length() == 3)
+                .ifPresent(System.out::println);
+    }
 }
 
-@Data
-class Insurance {
+record Insurance(String name) {
 
-    private final String name;
 }
 
 @AllArgsConstructor

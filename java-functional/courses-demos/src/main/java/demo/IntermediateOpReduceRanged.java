@@ -1,7 +1,5 @@
 package demo;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
 
 import java.math.BigInteger;
 import java.util.Arrays;
@@ -94,17 +92,17 @@ public class IntermediateOpReduceRanged {
         WordCounter wordCounter = stream.reduce(new WordCounter(0, true),
                 WordCounter::accumulate,
                 WordCounter::combine);
-        return wordCounter.getCounter();
+        return wordCounter.counter();
     }
 }
 
-@AllArgsConstructor
-@Getter
-class WordCounter {
 
-    private final int counter;
+record WordCounter(int counter, boolean lastSpace) {
 
-    private final boolean lastSpace;
+    public WordCounter(int counter, boolean lastSpace) {
+        this.counter = counter;
+        this.lastSpace = lastSpace;
+    }
 
     public WordCounter accumulate(Character c) {
         if (Character.isWhitespace(c)) {

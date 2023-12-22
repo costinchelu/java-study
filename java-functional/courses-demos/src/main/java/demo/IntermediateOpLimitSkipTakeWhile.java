@@ -3,9 +3,11 @@ package demo;
 import model.Course;
 import model.CourseRepo;
 
+import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 /**
  * sorted
@@ -69,5 +71,12 @@ public class IntermediateOpLimitSkipTakeWhile {
                         .dropWhile(course -> course.getReviewScore() >= 93)
                         .collect(Collectors.toList());
         System.out.println(coursesAfterReviewOf92);
+
+        Integer[] intArray = Stream
+                .iterate(1, n -> n + 1)
+                .skip(4)
+                .limit(5)
+                .toArray(Integer[]::new);
+        System.out.println(Arrays.toString(intArray));
     }
 }

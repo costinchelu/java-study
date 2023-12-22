@@ -19,6 +19,14 @@ import static java.util.stream.Collectors.maxBy;
 import static java.util.stream.Collectors.toCollection;
 import static java.util.stream.Collectors.toSet;
 
+/**
+ * The groupingBy() collector tells collect() that it should group all of the elements of
+ * the stream into a Map. The function determines the keys in the Map. Each value in the Map is
+ * a List of all entries that match that key.
+ * <br>
+ * Note that the function you call in groupingBy() cannot return null. It
+ * does not allow null keys.
+ */
 public class GroupingDishExamples {
 
     public static void main(String[] args) {
