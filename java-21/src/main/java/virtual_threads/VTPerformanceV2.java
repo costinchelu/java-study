@@ -35,8 +35,8 @@ public class VTPerformanceV2 {
         for (Thread thread : threads) {
             thread.join();
         }
-
         Instant end = Instant.now();
+
         System.out.println("Time = " + Duration.between(begin, end).toMillis() + " ms");
         System.out.println("# of cores = " + Runtime.getRuntime().availableProcessors());
         System.out.println("# of pools = " + poolNames.size());
