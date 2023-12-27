@@ -1,16 +1,22 @@
-package howto.working_w_properties_2;
+package howto.working_w_properties;
 
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.io.InputStream;
 import java.util.Date;
 import java.util.Properties;
 
 public class GetPropertiesValues {
 
-    public void getPropertyValues() {
+    public static void main(String[] args) throws IOException {
+        getPropertyValues();
+    }
+
+    public static void getPropertyValues() {
         Properties prop = new Properties();
         String propFileName = "config.properties";
-        try (InputStream inputStream = getClass().getClassLoader().getResourceAsStream(propFileName)) {
+        try (InputStream inputStream =
+                     GetPropertiesValues.class.getClassLoader().getResourceAsStream(propFileName)) {
             if (inputStream != null) {
                 prop.load(inputStream);
             } else {
