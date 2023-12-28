@@ -10,7 +10,6 @@
     <packaging>pom</packaging>
     <modules>
         <module>design-patterns</module>
-        <module>java-21</module>
         <module>java-jdbc</module>
         <module>java-security</module>
         <module>starter-projects</module>

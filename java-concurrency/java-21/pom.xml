@@ -3,24 +3,19 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+
     <parent>
         <groupId>ro.ccar</groupId>
-        <artifactId>java-general-repo</artifactId>
+        <artifactId>java-concurrency</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
-
-    <artifactId>java-concurrency</artifactId>
-    <packaging>pom</packaging>
-    <modules>
-        <module>udemy-multithreading-concurrency-optimization</module>
-        <module>concurrency-general</module>
-        <module>ocp-17</module>
-        <module>java-21</module>
-    </modules>
+    <artifactId>java-21</artifactId>
+    <version>1.0-SNAPSHOT</version>
 
     <properties>
-        <java.version>21</java.version>
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
+        <java.version>21</java.version>
     </properties>
+
 </project>
