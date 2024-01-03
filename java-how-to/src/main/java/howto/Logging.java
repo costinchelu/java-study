@@ -5,12 +5,12 @@ import java.util.logging.Logger;
 
 public class Logging {
 
-    private static final Logger logger = Logger.getLogger(Logging.class.getName());
+    private static final Logger log = Logger.getLogger(Logging.class.getName());
 
     public static void main(String[] args) {
-        logger.info("The current date and time is: " + ZonedDateTime.now());
-        logger.warning("This is a warning message");
-        logger.severe("This is an error message");
+        log.info("The current date and time is: " + ZonedDateTime.now());
+        log.warning("This is a warning message");
+        log.severe("This is an error message");
     }
 }
 

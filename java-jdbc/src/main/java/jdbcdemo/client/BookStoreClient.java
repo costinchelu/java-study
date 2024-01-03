@@ -17,7 +17,7 @@ public class BookStoreClient {
 		//persisting object graph
 		Publisher publisher = new Publisher("MANN", "Manning Publications Co.");
 		Book book = new Book("9781617290459", "Java Persistence with Hibernate, Second Edition", publisher);
-		List<Chapter> chapters = new ArrayList<Chapter>();
+		List<Chapter> chapters = new ArrayList<>();
 		Chapter chapter1 = new Chapter("Introducing JPA and Hibernate", 1);
 		chapters.add(chapter1);
 		Chapter chapter2 = new Chapter("Domain Models and Metadata", 2);

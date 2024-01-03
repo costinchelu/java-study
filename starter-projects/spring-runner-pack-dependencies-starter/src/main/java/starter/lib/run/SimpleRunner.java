@@ -12,28 +12,26 @@ public class SimpleRunner implements CommandLineRunner {
 
     @Override
     public void run(String... args) {
-        Scanner scanner = new Scanner(System.in);
+        try (Scanner scanner = new Scanner(System.in)) {
+            while (true) {
+                System.out.println("Enter your name, or just press return to exit.");
+                String response = scanner.nextLine();
 
-        while (true) {
-            System.out.println("Enter your name, or just press return to exit.");
-            String response = scanner.nextLine();
+                if (!response.isEmpty()) {
+                    System.out.println("Hello " + response + "!");
 
-            if (!response.isEmpty()) {
-                System.out.println("Hello " + response + "!");
+                    try {
+                        Thread.sleep(1500);
+                    } catch (InterruptedException e) {
+                        log.error(e.getMessage());
+                    }
 
-                try {
-                    Thread.sleep(1500);
-                } catch (InterruptedException e) {
-                    log.error(e.getMessage());
+                } else {
+                    System.out.println("Goodbye");
+                    break;
                 }
-
-            } else {
-                System.out.println("Goodbye");
-                break;
             }
         }
-
-        scanner.close();
     }
 }
 

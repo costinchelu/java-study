@@ -16,6 +16,7 @@
         <module>concurrency-general</module>
         <module>ocp-17</module>
         <module>java-21</module>
+        <module>udemy-easy</module>
     </modules>
 
     <properties>

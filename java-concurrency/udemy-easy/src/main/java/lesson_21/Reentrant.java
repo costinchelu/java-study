@@ -9,7 +9,7 @@ import java.util.concurrent.locks.ReentrantLock;
  *
  * same behaviour as the synchronized approach (with additional features)
  */
-public class App {
+public class Reentrant {
 
     private static int counter = 0;
     private static Lock lock = new ReentrantLock();

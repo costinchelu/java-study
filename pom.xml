@@ -32,6 +32,7 @@
         <module>spring-jdbc-vs-jpa-inserts-test</module>
         <module>spring-boot-javafx</module>
         <module>spring-professional-cert-udemy</module>
+        <module>java-io</module>
     </modules>
 
     <properties>

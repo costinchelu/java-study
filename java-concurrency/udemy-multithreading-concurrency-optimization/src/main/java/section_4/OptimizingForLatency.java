@@ -69,8 +69,12 @@ public class OptimizingForLatency {
 
     public static void recolorImage(BufferedImage originalImage, BufferedImage resultImage, int leftCorner, int topCorner,
                                     int width, int height) {
-        for (int x = leftCorner; x < leftCorner + width && x < originalImage.getWidth(); x++) {
-            for (int y = topCorner; y < topCorner + height && y < originalImage.getHeight(); y++) {
+        for (int x = leftCorner;
+             x < leftCorner + width && x < originalImage.getWidth();
+             x++) {
+            for (int y = topCorner;
+                 y < topCorner + height && y < originalImage.getHeight();
+                 y++) {
                 recolorPixel(originalImage, resultImage, x, y);
             }
         }

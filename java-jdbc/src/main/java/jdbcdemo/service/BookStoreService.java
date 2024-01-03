@@ -18,7 +18,7 @@ public class BookStoreService {
 	public void persistObjectGraph(Book book) {
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/bookstore", "root", "root");
+			connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/bookstore", "root", "mysql123");
 			
 			PreparedStatement stmt = connection.prepareStatement("INSERT INTO PUBLISHER (CODE, PUBLISHER_NAME) VALUES (?, ?)");
 			stmt.setString(1, book.getPublisher().getCode());	

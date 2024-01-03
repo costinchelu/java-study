@@ -55,7 +55,6 @@ public class ThreadClassUse {
         // will run after everything in the run() method of runner1 has been executed
         System.out.println("Finished with threads...");
 
-        // main thread is a daemon thread - will always start first and finish last (for example it is dealing with garbage collection)
         // threads we create are worker threads (children of the main thread)
 
         // daemon threads are created for I/O operations or h2rest.services and are terminated by the JVM when all

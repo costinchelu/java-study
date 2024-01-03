@@ -27,12 +27,12 @@ class Worker {
 }
 
 
-public class App {
+public class Locking {
 
     public static void main(String[] args) {
         Worker worker = new Worker();
 
-        Thread t1 = new Thread(new Runnable() {
+        new Thread(new Runnable() {
             @Override
             public void run() {
                 try {
@@ -41,9 +41,9 @@ public class App {
                     e.printStackTrace();
                 }
             }
-        });
+        }).start();
 
-        Thread t2 = new Thread(new Runnable() {
+        new Thread(new Runnable() {
             @Override
             public void run() {
                 try {
@@ -52,16 +52,13 @@ public class App {
                     e.printStackTrace();
                 }
             }
-        });
+        }).start();
 
-        t1.start();
-        t2.start();
-
-        try {
-            t1.join();
-            t2.join();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+//        try {
+//            t1.join();
+//            t2.join();
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
     }
 }

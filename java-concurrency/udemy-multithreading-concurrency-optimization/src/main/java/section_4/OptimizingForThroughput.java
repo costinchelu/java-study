@@ -48,7 +48,7 @@ public class OptimizingForThroughput {
                 return;
             }
 
-            long count = countWord(word);
+            long count = countWordOccurrence(word);
 
             byte[] response = Long.toString(count).getBytes();
             httpExchange.sendResponseHeaders(200, response.length);
@@ -57,7 +57,7 @@ public class OptimizingForThroughput {
             outputStream.close();
         }
 
-        private long countWord(String word) {
+        private long countWordOccurrence(String word) {
             long count = 0;
             int index = 0;
             while (index >= 0) {

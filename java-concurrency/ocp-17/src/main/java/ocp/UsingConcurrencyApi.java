@@ -90,7 +90,6 @@ class FutureGetWithCallable {
     public static void main(String[] args) {
         try (ExecutorService service = Executors.newSingleThreadExecutor()) {
             Future<Integer> result = service.submit(() -> 30 + 11);
-
             Integer i = result.get(1, TimeUnit.NANOSECONDS);
             System.out.println("Reached! Result is " + i);
         } catch (TimeoutException | InterruptedException | ExecutionException e) {
