@@ -41,7 +41,6 @@ public class Synchronization {
 }
 
 @Getter
-@Setter
 class Counter {
 
     private int count = 0;

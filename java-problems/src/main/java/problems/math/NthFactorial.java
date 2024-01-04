@@ -5,15 +5,13 @@ import java.util.stream.LongStream;
 public class NthFactorial {
 
    public static long factorialIterative(long n) {
-      // factorial of 0 is 1
-      if (n == 0) {
-         return 1;
+      int accumulator = 1;
+      if (n <= 1) return accumulator;
+      while (n > 1) {
+         accumulator *= n;
+         n--;
       }
-      long product = 1;
-      for (int i = 1; i <= n; i++) {
-         product *= i;
-      }
-      return product;
+      return accumulator;
    }
 
    public static long factorialStreams(long n) {

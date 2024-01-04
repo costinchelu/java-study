@@ -4,19 +4,19 @@ public class SumOfFirstNNumbers {
 
     // ITERATIVE: sum of the first n numbers
     public static long nSum(long n) {
-        long sum = 0;
+        long accumulator = 0;
         for (int i = 0; i <= n; i++) {
-            sum += i;
+            accumulator += i;
         }
-        return sum;
+        return accumulator;
     }
 
     // RECURSIVE: sum of the first n numbers
-    public static long sum(long n) {
+    public static long nSumRecursive(long n) {
         if (n == 1) {
             return 1;
         } else {
-            return n + sum(n - 1);
+            return n + nSumRecursive(n - 1);
         }
     }
 

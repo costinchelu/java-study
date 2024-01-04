@@ -6,21 +6,24 @@ import java.util.stream.Stream;
 
 public class PrimalityTest {
 
-    public static boolean isPrimeIterative(long n) {
-        if (n < 2) {
+    public static boolean isPrimeIterative(long input) {
+        if (input < 2) {
             return false;
         }
-        for (long i = 2; i <= n / i; i++) {
-            if (n % i == 0) {
+        for (long i = 2;
+             i <= input / i;
+             i++) {
+
+            if (input % i == 0) {
                 return false;
             }
         }
         return true;
     }
 
-    public static boolean isPrimeFunctional(long n) {
-        long nRoot = (long) Math.sqrt((double) n);
-        return LongStream.rangeClosed(2, nRoot).noneMatch(each -> n % each == 0);
+    public static boolean isPrimeFunctional(long input) {
+        long nRoot = (long) Math.sqrt((double) input);
+        return LongStream.rangeClosed(2, nRoot).noneMatch(each -> input % each == 0);
     }
 
     public static void main(String[] args) {
