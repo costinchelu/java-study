@@ -4,11 +4,11 @@ import java.util.Locale;
 
 public class Power {
 
-    public static double raiseToPower(double a, int b) {
-        double result = 1d;
-        while (b > 0) {
-            result *= a;
-            b--;
+    public static double raiseToPower(double number, int power) {
+        double result = 1D;
+        while (power > 0) {
+            result *= number;
+            power--;
         }
         return result;
     }
