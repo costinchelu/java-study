@@ -14,10 +14,8 @@ public class EmployeesSalariesReportServiceTest {
     @Test
     public void shouldGenerateSalaryReport() {
 
-        // there is no way to write true unit test for this class,
-        // since there is no way to inject mocks,
-        // the only possibility without dependency injection
-        // is to write integration test
+        // there is no way to write true unit test for this class, since there is no way to inject mocks,
+        // the only possibility without dependency injection is to write integration test
 
     }
 }
