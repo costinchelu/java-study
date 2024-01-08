@@ -22,7 +22,6 @@ class EmployeesSalariesReportService {
     void generateReport() {
         List<Employee> employees = employeeDao.findAll();
         List<EmployeeSalary> employeeSalaries = employeeSalaryCalculator.calculateSalaries(employees);
-
         salaryReport.writeReport(employeeSalaries);
     }
 }
