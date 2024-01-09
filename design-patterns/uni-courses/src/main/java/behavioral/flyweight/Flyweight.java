@@ -11,7 +11,7 @@ import java.util.Map;
 
 interface ITravelPackage {
 
-    void printComplete(Optionals optional);
+    void attachExtra(Extras optional);
 }
 
 
@@ -30,13 +30,13 @@ class TravelPackage implements ITravelPackage {
     private boolean breakfast;
 
     @Override
-    public void printComplete(Optionals optional) {
+    public void attachExtra(Extras extra) {
         System.out.println("Travel package code: " + packageCode);
         System.out.println("Travel destination: " + destination);
         System.out.println("Accommodation at hotel: " + hotel);
         System.out.println(breakfast ? "Has breakfast" : "No breakfast");
-        System.out.println(optional.isDinner() ? "Has dinner" : "No dinner");
-        System.out.println("Optional trips: " + optional.getOptionalTrips());
+        System.out.println(extra.isDinner() ? "Has dinner" : "No dinner");
+        System.out.println("Optional trips: " + extra.getOptionalTrips());
         System.out.println("--------------------------");
     }
 }
@@ -45,7 +45,7 @@ class TravelPackage implements ITravelPackage {
 @AllArgsConstructor
 @Getter
 @Setter
-class Optionals {
+class Extras {
 
     private boolean dinner;
 
@@ -56,10 +56,6 @@ class Optionals {
 class PackageFlyweightFactory {
 
     private final Map<Integer, ITravelPackage> travelPackages = new HashMap<>();
-
-    public int count() {
-        return travelPackages.size();
-    }
 
     public ITravelPackage getOrSetPackage(int packageCode, String hotel, String destination, boolean breakfast) {
         ITravelPackage travelPackage = travelPackages.get(packageCode);
@@ -81,18 +77,18 @@ public class Flyweight {
 
     public static void main(String[] args) {
         PackageFlyweightFactory factory = new PackageFlyweightFactory();
-        Optionals o1 = new Optionals(true, 3);
-        Optionals o2 = new Optionals(false, 3);
-        Optionals o3 = new Optionals(true, 1);
-        Optionals o4 = new Optionals(true, 5);
+        Extras extra1 = new Extras(true, 3);
+        Extras extra2 = new Extras(false, 3);
+        Extras extra3 = new Extras(true, 1);
+        Extras extra4 = new Extras(true, 5);
 
         ITravelPackage pack = factory.getOrSetPackage(1, "Inter", "Bucharest", true);
-        pack.printComplete(o1);
-        factory.getOrSetPackage(2, "California", "Los Angeles", false).printComplete(o2);
-        o2.setOptionalTrips(6);
-        factory.getOrSetPackage(2, "California", "Los Angeles", false).printComplete(o2);
-        factory.getOrSetPackage(3, "Tourist", "Prague", true).printComplete(o4);
-        factory.getOrSetPackage(4, "Atlas", "Casablanca", true).printComplete(o3);
+        pack.attachExtra(extra1);
+        factory.getOrSetPackage(2, "California", "Los Angeles", false).attachExtra(extra2);
+        extra2.setOptionalTrips(6);
+        factory.getOrSetPackage(2, "California", "Los Angeles", false).attachExtra(extra2);
+        factory.getOrSetPackage(3, "Tourist", "Prague", true).attachExtra(extra4);
+        factory.getOrSetPackage(4, "Atlas", "Casablanca", true).attachExtra(extra3);
 
         factory.printMap();
     }

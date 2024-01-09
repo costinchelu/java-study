@@ -29,8 +29,8 @@ class AdapterDemo {
         ITarget accommodation = new Accommodation();
         printReservation(accommodation);
 
-        ITarget rent = new VehicleRentServiceO(new RentedVehicle(new Vehicle("Skoda Octavia", 2.0)));
-        printReservation(rent);
+        ITarget rentO = new VehicleRentServiceO(new RentedVehicle(new Vehicle("Skoda Octavia", 2.0)));
+        printReservation(rentO);
 
         ITarget rentC = new VehicleRentServiceC(new Vehicle("Skoda Octavia", 2.0));
         printReservation(rentC);
@@ -41,13 +41,9 @@ class AdapterDemo {
         travelPackage.description();
         System.out.println("For operator: ");
         travelPackage.bookPackage();
-        System.out.println();
+        System.out.println("--------");
     }
 }
-
-
-
-
 
 
 

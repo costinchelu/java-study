@@ -64,13 +64,13 @@ class DeepObj implements IDeepObj {
 
 public class DeepPrototype {
     public static void main(String[] args) {
-        IDeepObj list = new DeepObj();
-        list.loadOperation();
+        IDeepObj obj = new DeepObj();
+        obj.loadOperation();
 
-        IDeepObj copy1 = list.copy();
-        IDeepObj copy2 = list.copy();
-        IDeepObj copy3 = list.copy();
-        System.out.println(list);
+        IDeepObj copy1 = obj.copy();
+        IDeepObj copy2 = obj.copy();
+        IDeepObj copy3 = obj.copy();
+        System.out.println(obj);
         System.out.println(copy1);
         System.out.println(copy2);
         System.out.println(copy3);
