@@ -1,4 +1,4 @@
-package howto.inheritance.example_2;
+package howto.inheritance.w_abstract_class;
 
 public abstract class Animal {
 

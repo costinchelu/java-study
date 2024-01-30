@@ -1,4 +1,4 @@
-package howto.inheritance.example_1;
+package howto.inheritance.basic;
 
 class Kid extends Human {
 

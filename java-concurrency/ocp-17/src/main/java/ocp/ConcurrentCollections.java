@@ -1,7 +1,5 @@
 package ocp;
 
-import java.util.Collection;
-import java.util.HashMap;
 import java.util.List;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.CopyOnWriteArrayList;
@@ -31,7 +29,5 @@ public class ConcurrentCollections {
         System.out.println();
         System.out.println("Size: " + favNumbers.size()); // Size: 6
         System.out.println(favNumbers);  // [4, 3, 42, 5, 4, 43]
-
-
     }
 }
