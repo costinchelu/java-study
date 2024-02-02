@@ -14,6 +14,7 @@ public class TaxInformationService {
 
     @Autowired
     private TaxRateDao taxRateDao;
+
     @Autowired
     private TaxCalculationComponent taxCalculationComponent;
 

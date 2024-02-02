@@ -8,7 +8,9 @@ import javax.annotation.PreDestroy;
 
 @Component
 public class SpringBean1 {
+
     private SpringBean2 springBean2;
+
     private SpringBean3 springBean3;
 
     public SpringBean1() {

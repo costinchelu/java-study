@@ -9,15 +9,18 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class SpringBootConsoleApplication implements CommandLineRunner {
 
-    @Autowired
-    private SpringBean1 springBean1;
+    private final SpringBean1 springBean1;
+
+    public SpringBootConsoleApplication(SpringBean1 springBean1) {
+        this.springBean1 = springBean1;
+    }
 
     public static void main(String[] args) {
         SpringApplication.run(SpringBootConsoleApplication.class, args);
     }
 
     @Override
-    public void run(String... args) throws Exception {
+    public void run(String... args) {
         springBean1.sayHello();
     }
 }

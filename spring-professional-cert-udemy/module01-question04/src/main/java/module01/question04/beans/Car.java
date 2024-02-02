@@ -8,10 +8,13 @@ public class Car {
 
     @Autowired
     private Battery battery;
+
     @Autowired
     private Engine engine;
+
     @Autowired
     private Wheels wheels;
+
     @Autowired
     private Gearbox gearbox;
 

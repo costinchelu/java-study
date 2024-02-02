@@ -17,12 +17,16 @@ public class SpringController {
 
     @Autowired
     private SpringBean1 springBean1;
+
     @Autowired
     private SpringBean2 springBean2;
+
     @Autowired
     private SpringBean3 springBean3;
+
     @Autowired
     private SpringBean4 springBean4;
+
     @Autowired
     private SpringBean5 springBean5;
 

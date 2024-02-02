@@ -33,6 +33,7 @@ class TextRenderer {
         return text;
     }
 
+    
     static class TextRendererBuilder {
         private FontStyleRenderer fontStyleRenderer = new DefaultFontStyleRenderer();
         private FontColorRenderer fontColorRenderer = new DefaultColorRenderer();

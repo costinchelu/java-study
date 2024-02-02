@@ -3,8 +3,11 @@ package module01.question01.spring.dependency.injection;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class Runner {
+
+    private static final String REPORT = "pdf-reports";
+
     public static void main(String... args) {
-        AnnotationConfigApplicationContext context = getSpringContext("pdf-reports");
+        AnnotationConfigApplicationContext context = getSpringContext(REPORT);
 
         EmployeesSalariesReportService employeesSalariesReportService = context.getBean(EmployeesSalariesReportService.class);
         employeesSalariesReportService.generateReport();

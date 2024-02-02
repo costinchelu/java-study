@@ -1,19 +1,20 @@
 package module01.question10.annotations.beans;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
 
 @Component
 public class SpringBean1 {
-    @Autowired
-    private SpringBean2 springBean2;
-    @Autowired
-    private SpringBean3 springBean3;
 
-    public SpringBean1() {
+    private final SpringBean2 springBean2;
+
+    private final SpringBean3 springBean3;
+
+    public SpringBean1(SpringBean2 springBean2, SpringBean3 springBean3) {
         System.out.println(getClass().getSimpleName() + "::constructor");
+        this.springBean2 = springBean2;
+        this.springBean3 = springBean3;
     }
 
     @PostConstruct

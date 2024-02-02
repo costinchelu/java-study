@@ -31,7 +31,7 @@ class Sample01NoSpringContextTest {
 	private MailSender mailSenderMock;
 	
 	@Captor
-	private ArgumentCaptor<Double> doubleCaptor;
+	private ArgumentCaptor<Double> doubleTypeCaptor;
 
 	@Test
 	void should_PayCorrectPrice_When_InputOK() {
@@ -43,8 +43,8 @@ class Sample01NoSpringContextTest {
 		bookingService.makeBooking(bookingRequest);		
 		
 		// then
-		verify(paymentServiceMock, times(1)).pay(eq(bookingRequest), doubleCaptor.capture());
-		double capturedArgument = doubleCaptor.getValue();
+		verify(paymentServiceMock, times(1)).pay(eq(bookingRequest), doubleTypeCaptor.capture());
+		double capturedArgument = doubleTypeCaptor.getValue();
 		
 		assertEquals(400.0, capturedArgument);
 	}
@@ -63,8 +63,8 @@ class Sample01NoSpringContextTest {
 		bookingService.makeBooking(bookingRequest2);	
 		
 		// then
-		verify(paymentServiceMock, times(2)).pay(any(), doubleCaptor.capture());
-		List<Double> capturedArguments = doubleCaptor.getAllValues();
+		verify(paymentServiceMock, times(2)).pay(any(), doubleTypeCaptor.capture());
+		List<Double> capturedArguments = doubleTypeCaptor.getAllValues();
 		
 		assertEquals(expectedValues, capturedArguments);
 	}

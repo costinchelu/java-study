@@ -9,8 +9,9 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class ApplicationConfiguration {
-    @Bean
+
     @Autowired
+    @Bean
     public SpringBean1 springBean1(SpringBean2 springBean2, SpringBean3 springBean3) {
         return new SpringBean1(springBean2, springBean3);
     }

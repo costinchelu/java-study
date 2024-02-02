@@ -7,6 +7,7 @@ import org.springframework.stereotype.Component;
 
 @Component("database-dao")
 class DatabaseStoreFinancialDataDao implements FinancialDataDao {
+
     @Override
     public FinancialYearSummary findFinancialYearSummary(int year) {
         System.out.println("Database Dao => findFinancialYearSummary");
