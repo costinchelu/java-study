@@ -20,7 +20,7 @@ public class IdentityVsEquality {
 
         int a = human1.hashCode();
         int b = human2.hashCode();
-        System.out.println("Hashcodes: " + a + "    " + b);
+        System.out.println("Hash codes: " + a + "    " + b);
     }
 }
 
@@ -33,7 +33,7 @@ class Human {
 // override equals for the particular case of Human class
     @Override
     public boolean equals(Object obj) {
-        if(obj == null) {
+        if(obj == null || obj.getClass() != Human.class) {
             return false;
         }
         if (obj == this) {

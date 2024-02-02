@@ -1,6 +1,7 @@
 package ocp;
 
 public class CreatingAThread {
+
     public static void main(String[] args) {
 
         // one liner
@@ -16,6 +17,7 @@ public class CreatingAThread {
 }
 
 class FourThreads {
+
     public static void main(String[] args) {
         Runnable printInventory = () -> System.out.println("Printing zoo inventory");
 
