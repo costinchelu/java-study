@@ -11,8 +11,11 @@ import java.util.List;
 
 @Service
 public class EmployeesSalariesReportService {
+
     private final EmployeeDao employeeDao;
+
     private final EmployeeSalaryCalculator employeeSalaryCalculator;
+
     private final SalaryReport salaryReport;
 
     EmployeesSalariesReportService(EmployeeDao employeeDao, EmployeeSalaryCalculator employeeSalaryCalculator, SalaryReport salaryReport) {

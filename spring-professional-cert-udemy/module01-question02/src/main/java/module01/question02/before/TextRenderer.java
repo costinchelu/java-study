@@ -11,7 +11,7 @@ class TextRenderer {
     private final FontColorRenderer fontColorRenderer;
     private final FontWeightRenderer fontWeightRenderer;
 
-    TextRenderer(FontStyleRenderer fontStyleRenderer, FontColorRenderer fontColorRenderer, FontWeightRenderer fontWeightRenderer) {
+    public TextRenderer(FontStyleRenderer fontStyleRenderer, FontColorRenderer fontColorRenderer, FontWeightRenderer fontWeightRenderer) {
         this.fontStyleRenderer = fontStyleRenderer;
         this.fontColorRenderer = fontColorRenderer;
         this.fontWeightRenderer = fontWeightRenderer;

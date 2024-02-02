@@ -1,10 +1,10 @@
 package module01.question10.stereotypes.ds;
 
 public class Article {
+
     private int id;
 
     public Article(int id) {
-
         this.id = id;
     }
 

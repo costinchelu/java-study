@@ -8,6 +8,7 @@ import java.util.List;
 
 @Component
 public class EmployeeDao {
+
     public List<Employee> findAll() {
         System.out.println("Finding all employees");
         return Collections.emptyList();

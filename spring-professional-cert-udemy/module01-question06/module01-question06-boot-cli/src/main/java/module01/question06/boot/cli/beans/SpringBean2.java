@@ -2,11 +2,12 @@ package module01.question06.boot.cli.beans;
 
 import org.springframework.stereotype.Component;
 
-import javax.annotation.PostConstruct;
-import javax.annotation.PreDestroy;
+import jakarta.annotation.PostConstruct;
+import jakarta.annotation.PreDestroy;
 
 @Component
 public class SpringBean2 {
+
     public SpringBean2() {
         System.out.println(getClass().getSimpleName() + "::constructor");
     }

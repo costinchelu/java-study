@@ -7,6 +7,7 @@ import java.util.List;
 
 @Component
 public class XlsSalaryReport implements SalaryReport {
+
     public void writeReport(List<EmployeeSalary> employeeSalaries) {
         System.out.println("Writing Xls Report");
     }

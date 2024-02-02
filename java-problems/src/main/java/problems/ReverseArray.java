@@ -1,5 +1,7 @@
 package problems;
 
+import java.util.Arrays;
+
 /** Reverse the values in an array */
 public class ReverseArray {
 
@@ -15,7 +17,7 @@ public class ReverseArray {
     }
 
     public static void reverseArray2(double[] a) {
-        for(int i = 0; i < a.length/2; i++) {
+        for(int i = 0; i < a.length / 2; i++) {
             double temp = a[i];
             a[i] = a[a.length - 1 - i];
             a[a.length - 1 - i] = temp;

@@ -5,7 +5,9 @@ import module01.question03.ds.FinancialYearSummary;
 import module01.question03.writer.FinancialReportWriter;
 
 class SimpleFinancialReportService {
+
     private final FinancialDataDao financialDataDao;
+
     private final FinancialReportWriter financialReportWriter;
 
     SimpleFinancialReportService(FinancialDataDao financialDataDao, FinancialReportWriter financialReportWriter) {

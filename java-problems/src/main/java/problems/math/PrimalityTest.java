@@ -6,14 +6,12 @@ import java.util.stream.Stream;
 
 public class PrimalityTest {
 
+    // also working with: for (int i = 2; i <= Math.sqrt(input); i++)
     public static boolean isPrimeIterative(long input) {
         if (input < 2) {
             return false;
         }
-        for (long i = 2;
-             i <= input / i;
-             i++) {
-
+        for (long i = 2; i <= input / i; i++) {
             if (input % i == 0) {
                 return false;
             }
@@ -22,7 +20,7 @@ public class PrimalityTest {
     }
 
     public static boolean isPrimeFunctional(long input) {
-        long nRoot = (long) Math.sqrt((double) input);
+        long nRoot = (long) Math.sqrt(input);
         return LongStream.rangeClosed(2, nRoot).noneMatch(each -> input % each == 0);
     }
 
