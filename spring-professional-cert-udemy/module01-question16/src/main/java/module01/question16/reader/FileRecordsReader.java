@@ -8,6 +8,7 @@ import java.util.Collection;
 
 @Component
 public class FileRecordsReader implements RecordsReader, Ordered {
+
     @Override
     public Collection<Record> readRecords() {
         return null;

@@ -7,6 +7,7 @@ import java.util.Collection;
 
 @Component
 public class DbRecordsBackup implements RecordsBackup {
+
     @Override
     public void backupRecords(Collection<Record> records) {
 

@@ -8,6 +8,7 @@ import java.util.Collections;
 
 @Component
 public class DbRecordsReader implements RecordsReader {
+
     @Override
     public Collection<Record> readRecords() {
         return Collections.emptyList();

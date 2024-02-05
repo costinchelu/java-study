@@ -8,6 +8,7 @@ public class PropertyReadingBean {
 
     @Value("${app.env}")
     private String appEnv;
+
     @Value("${app.envid}")
     private String appEnvId;
 

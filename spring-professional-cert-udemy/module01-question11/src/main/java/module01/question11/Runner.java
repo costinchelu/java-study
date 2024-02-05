@@ -1,5 +1,6 @@
 package module01.question11;
 
+import module01.question11.beans.SpringBean3;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class Runner {
@@ -8,6 +9,7 @@ public class Runner {
 
         context.registerShutdownHook();
 
-        //context.getBean(SpringBean3.class);
+        // for a prototype scoped bean to be instantiated:
+//        context.getBean(SpringBean3.class);
     }
 }

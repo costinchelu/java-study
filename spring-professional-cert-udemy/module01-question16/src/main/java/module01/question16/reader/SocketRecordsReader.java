@@ -9,6 +9,7 @@ import java.util.Collection;
 @Component
 @Order(1)
 public class SocketRecordsReader implements RecordsReader {
+
     @Override
     public Collection<Record> readRecords() {
         return null;

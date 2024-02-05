@@ -16,19 +16,26 @@ import java.util.Optional;
 
 @Service
 public class RecordsService01 {
+
     @Autowired
     public DbRecordsReader recordsReader;
+
     @Autowired
     protected DbRecordsBackup recordsBackup;
+
     @Autowired
     private DbRecordsProcessor recordsProcessor;
+
     @Autowired
     DbRecordsWriter recordsWriter;
+
     @Autowired
     private Optional<RecordsHash> recordsHash;
+
     @Autowired
     @Nullable
     private RecordsUtil recordsUtil;
+
     @Autowired(required = false)
     private RecordsValidator recordsValidator;
 

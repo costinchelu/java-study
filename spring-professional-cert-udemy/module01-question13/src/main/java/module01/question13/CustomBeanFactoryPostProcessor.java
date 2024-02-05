@@ -5,12 +5,14 @@ import org.springframework.beans.factory.config.BeanDefinition;
 import org.springframework.beans.factory.config.BeanFactoryPostProcessor;
 import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
 
-import static java.util.Arrays.stream;
+import java.util.Arrays;
+
 
 public class CustomBeanFactoryPostProcessor implements BeanFactoryPostProcessor {
+
     @Override
     public void postProcessBeanFactory(ConfigurableListableBeanFactory beanFactory) throws BeansException {
-        stream(beanFactory.getBeanDefinitionNames())
+        Arrays.stream(beanFactory.getBeanDefinitionNames())
                 .map(beanFactory::getBeanDefinition)
                 .filter(beanDefinition -> beanClassNameContains(beanDefinition, "module01.question13.beans"))
                 .map(BeanDefinition::getBeanClassName)

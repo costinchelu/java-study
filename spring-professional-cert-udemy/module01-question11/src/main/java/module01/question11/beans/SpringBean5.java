@@ -1,9 +1,11 @@
 package module01.question11.beans;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
-//@Component
+@Component
 public class SpringBean5 {
+
     @Autowired
     private SpringBean6 springBean6;
 

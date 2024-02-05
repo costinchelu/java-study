@@ -15,7 +15,9 @@ import java.util.Optional;
 public class RecordsService03 {
 
     @Autowired
-    private RecordsService03(DbRecordsReader recordsReader, DbRecordsProcessor recordsProcessor, Optional<RecordsUtil> recordsUtil, @Nullable RecordsHash recordsHash, @Autowired(required = false) RecordsValidator recordsValidator) {
+    private RecordsService03(DbRecordsReader recordsReader, DbRecordsProcessor recordsProcessor,
+                             Optional<RecordsUtil> recordsUtil, @Nullable RecordsHash recordsHash,
+                             @Autowired(required = false) RecordsValidator recordsValidator) {
         System.out.println(
                 getClass().getSimpleName() + " recordsReader = " + recordsReader + "\n" +
                         getClass().getSimpleName() + " recordsProcessor = " + recordsProcessor + "\n" +

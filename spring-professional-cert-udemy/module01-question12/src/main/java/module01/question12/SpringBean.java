@@ -8,10 +8,13 @@ public class SpringBean {
 
     @Value("${db.host}")
     private String dbHost;
+
     @Value("${app.envid}")
     private String appEndId;
+
     @Value("${external.service}")
     private String externalService;
+
     @Value("${JAVA_HOME}")
     private String javaHome;
 
@@ -22,3 +25,10 @@ public class SpringBean {
         System.out.println("JAVA_HOME = " + javaHome);
     }
 }
+
+/*
+VM options:
+-Dapp-home=spring-professional-cert-udemy\\app-home -Dexternal.service=service01
+
+to access app-home folder
+ */
