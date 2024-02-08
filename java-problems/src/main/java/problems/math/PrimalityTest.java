@@ -21,7 +21,7 @@ public class PrimalityTest {
 
     public static boolean isPrimeFunctional(long input) {
         long nRoot = (long) Math.sqrt(input);
-        return LongStream.rangeClosed(2, nRoot).noneMatch(each -> input % each == 0);
+        return LongStream.rangeClosed(2, nRoot).noneMatch(i -> input % i == 0);
     }
 
     public static void main(String[] args) {

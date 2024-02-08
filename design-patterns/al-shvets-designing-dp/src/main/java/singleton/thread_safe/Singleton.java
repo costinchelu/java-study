@@ -29,7 +29,7 @@ public final class Singleton {
             synchronized (Singleton.class) {
                 result = instance;
                 if (result == null) {
-                    instance = result = new Singleton(value);
+                    instance = new Singleton(value);
                 }
             }
         }
