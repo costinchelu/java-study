@@ -1,4 +1,4 @@
-package atomic;
+package concurrent_dt;
 
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;

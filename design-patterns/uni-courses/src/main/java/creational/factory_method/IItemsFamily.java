@@ -57,15 +57,19 @@ class SimpleFactory {
     }
 
     public static IItemsFamily create(ItemType type) throws Exception {
-        switch (type) {
-            case ITEM1 -> {
-                return new Item1();
-            }
-            case ITEM2 -> {
-                return new Item2();
-            }
-            default -> throw new Exception("Not a correct type");
-        }
+//        switch (type) {
+//            case ITEM1 -> {
+//                return new Item1();
+//            }
+//            case ITEM2 -> {
+//                return new Item2();
+//            }
+//            default -> throw new Exception("Not a correct type");
+//        }
+        return switch (type) {
+            case ITEM1 -> new Item1();
+            case ITEM2 -> new Item2();
+        };
     }
 }
 
