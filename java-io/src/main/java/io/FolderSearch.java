@@ -15,8 +15,7 @@ public class FolderSearch {
         Path path = Paths.get("C:\\WORK");
         long minSize = 1_000;
         try (var s = Files.find(path, 6,
-                (p, a) ->
-                        a.isRegularFile()
+                (p, a) -> a.isRegularFile()
                                 && p.toString().endsWith(fileExtension)
                                 && a.size() > minSize)) {
             s.forEach(System.out::println);

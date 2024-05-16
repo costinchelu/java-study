@@ -26,13 +26,13 @@ public class Streams {
 
     public static void main(String[] args) throws IOException, ClassNotFoundException {
         var streams = new Streams();
-        var objects = new ArrayList<SomeRecord>();
-        objects.add(new SomeRecord("John", 20));
-        objects.add(new SomeRecord("Amy", 30));
+        var objects = new ArrayList<SomeData>();
+        objects.add(new SomeData("John", 20));
+        objects.add(new SomeData("Amy", 30));
         File dataFile = Files.createFile(Paths.get("C:\\WORK\\in-out\\ocp-io\\objects.dat")).toFile();
 
         streams.saveToFile(objects, dataFile);
-        List<SomeRecord> someRecords = streams.readFromFile(dataFile);
+        List<SomeData> someRecords = streams.readFromFile(dataFile);
         System.out.println(someRecords);
 
     }
@@ -79,26 +79,24 @@ public class Streams {
         }
     }
 
-    void saveToFile(List<SomeRecord> objects, File dataFile) throws IOException {
+    void saveToFile(List<SomeData> objects, File dataFile) throws IOException {
         try (var out = new ObjectOutputStream(new BufferedOutputStream(new FileOutputStream(dataFile)))) {
-            for (SomeRecord record : objects)
+            for (SomeData record : objects)
                 out.writeObject(record);
         }
     }
 
-    List<SomeRecord> readFromFile(File dataFile) throws IOException, ClassNotFoundException {
-        var objects = new ArrayList<SomeRecord>();
+    List<SomeData> readFromFile(File dataFile) throws IOException, ClassNotFoundException {
+        var objects = new ArrayList<SomeData>();
         try (var in = new ObjectInputStream(new BufferedInputStream(new FileInputStream(dataFile)))) {
             while (true) {
                 var object = in.readObject();
-                if (object instanceof SomeRecord g)
+                if (object instanceof SomeData g)
                     objects.add(g);
             }
         } catch (EOFException ignored) {}
         return objects;
     }
-
-
 }
 
-record SomeRecord(String name, int age) implements Serializable {}
+record SomeData(String name, int age) implements Serializable {}

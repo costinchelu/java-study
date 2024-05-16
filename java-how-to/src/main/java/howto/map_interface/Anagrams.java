@@ -4,6 +4,7 @@ import java.util.*;
 import java.io.*;
 
 public class Anagrams {
+
     public static void main(String[] args) {
         int minGroupSize = Integer.parseInt(args[1]);
 
@@ -15,9 +16,7 @@ public class Anagrams {
             while (s.hasNext()) {
                 String word = s.next();
                 String alpha = alphabetize(word);
-                List<String> l = m.get(alpha);
-                if (l == null)
-                    m.put(alpha, l= new ArrayList<>());
+                List<String> l = m.computeIfAbsent(alpha, k -> new ArrayList<>());
                 l.add(word);
             }
         } catch (IOException e) {

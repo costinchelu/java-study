@@ -12,24 +12,24 @@ public class ReadFile {
     public static List<String> readFile() {
 
         List<String> list = new ArrayList<>();
-        BufferedReader reader = null;
+//        BufferedReader reader = null;
 
-        try {
-            reader = Files.newBufferedReader(Paths.get(WriteFile.IO_PATH));
+        try (BufferedReader reader = Files.newBufferedReader(Paths.get(FileUtil.IO_PATH))) {
+//            reader = Files.newBufferedReader(Paths.get(WriteFile.IO_PATH));
             String line;
             while ((line = reader.readLine()) != null) {
                 list.add(line);
             }
         } catch (IOException e) {
             System.out.println("Error reading file: " + e.getMessage());
-        } finally {
-            if(reader != null) {
-                try {
-                    reader.close();
-                } catch (IOException e) {
-                    System.out.println("Error closing the file: " + e.getMessage());
-                }
-            }
+//        } finally {
+//            if(reader != null) {
+//                try {
+//                    reader.close();
+//                } catch (IOException e) {
+//                    System.out.println("Error closing the file: " + e.getMessage());
+//                }
+//            }
         }
 
         return list;

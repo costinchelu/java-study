@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-public class MapInterface {
+public class StreamCollectionsGrouping {
 
     private static final int PASS_THRESHOLD = 5;
 
