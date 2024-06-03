@@ -11,11 +11,13 @@ public class Runner {
         TextRenderer redRenderer = new TextRenderer.TextRendererBuilder()
                 .withFontColorRenderer(new RedColorRenderer())
                 .build();
+
         redRenderer.render("Red Color Rendering");
 
         TextRenderer boldRenderer = new TextRenderer.TextRendererBuilder()
                 .withFontWeightRenderer(new BoldFontWeightRenderer())
                 .build();
+
         boldRenderer.render("Bold Rendering");
     }
 }

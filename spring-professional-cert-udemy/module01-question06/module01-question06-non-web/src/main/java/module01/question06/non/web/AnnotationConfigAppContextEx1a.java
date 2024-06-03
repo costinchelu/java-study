@@ -6,9 +6,8 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 
 public class AnnotationConfigAppContextEx1a {
     public static void main(String[] args) {
-        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(
-                ConfigurationComponentScan.class
-        );
+        AnnotationConfigApplicationContext context =
+                new AnnotationConfigApplicationContext(ConfigurationComponentScan.class);
 
         SpringBean1 bean = context.getBean(SpringBean1.class);
 

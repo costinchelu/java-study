@@ -15,7 +15,8 @@ public class FinancialReportService {
 
     private final FinancialReportWriter financialReportWriter;
 
-    public FinancialReportService(@Qualifier("database-dao") FinancialDataDao financialDataDao, @Qualifier("database-writer") FinancialReportWriter financialReportWriter) {
+    public FinancialReportService(@Qualifier("database-dao") FinancialDataDao financialDataDao,
+                                  @Qualifier("file-writer") FinancialReportWriter financialReportWriter) {
         this.financialDataDao = financialDataDao;
         this.financialReportWriter = financialReportWriter;
     }

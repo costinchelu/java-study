@@ -5,9 +5,8 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 
 public class AnnotationConfigAppContextEx2 {
     public static void main(String[] args) {
-        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(
-                "module01.question06.non.web.beans"
-        );
+        AnnotationConfigApplicationContext context =
+                new AnnotationConfigApplicationContext("module01.question06.non.web.beans");
 
         SpringBean1 bean = context.getBean(SpringBean1.class);
 

@@ -3,7 +3,7 @@ package spring101.controllers;
 import org.springframework.web.bind.annotation.*;
 import spring101.dto.Person;
 
-import javax.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpServletResponse;
 import java.util.Arrays;
 import java.util.List;
 

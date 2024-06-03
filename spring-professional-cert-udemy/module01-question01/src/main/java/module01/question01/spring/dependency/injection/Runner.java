@@ -5,6 +5,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 public class Runner {
 
     private static final String REPORT = "pdf-reports";
+//    private static final String REPORT = "xls-reports";
 
     public static void main(String... args) {
         AnnotationConfigApplicationContext context = getSpringContext(REPORT);
