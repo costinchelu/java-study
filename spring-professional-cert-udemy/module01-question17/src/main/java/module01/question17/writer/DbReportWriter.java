@@ -5,6 +5,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class DbReportWriter implements ReportWriter {
+
     @Override
     public void write(Report report, String reportName) {
 

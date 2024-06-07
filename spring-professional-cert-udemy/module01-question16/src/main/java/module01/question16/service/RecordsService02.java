@@ -9,8 +9,10 @@ import org.springframework.stereotype.Service;
 @Service
 public class RecordsService02 {
 
-    public RecordsService02(DbRecordsReader recordsReader, DbRecordsBackup recordsBackup,
-                            DbRecordsProcessor recordsProcessor, DbRecordsWriter recordsWriter) {
+    public RecordsService02(DbRecordsReader recordsReader,
+                            DbRecordsBackup recordsBackup,
+                            DbRecordsProcessor recordsProcessor,
+                            DbRecordsWriter recordsWriter) {
         System.out.println(
                 getClass().getSimpleName() + " recordsReader = " + recordsReader + "\n" +
                         getClass().getSimpleName() + " recordsBackup = " + recordsBackup + "\n" +

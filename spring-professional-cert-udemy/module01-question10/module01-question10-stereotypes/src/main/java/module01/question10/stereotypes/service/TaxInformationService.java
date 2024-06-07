@@ -6,17 +6,19 @@ import module01.question10.stereotypes.ds.Article;
 import module01.question10.stereotypes.ds.TaxCalculation;
 import module01.question10.stereotypes.ds.TaxInformation;
 import module01.question10.stereotypes.ds.TaxRate;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 public class TaxInformationService {
 
-    @Autowired
-    private TaxRateDao taxRateDao;
+    private final TaxRateDao taxRateDao;
 
-    @Autowired
-    private TaxCalculationComponent taxCalculationComponent;
+    private final TaxCalculationComponent taxCalculationComponent;
+
+    public TaxInformationService(TaxRateDao taxRateDao, TaxCalculationComponent taxCalculationComponent) {
+        this.taxRateDao = taxRateDao;
+        this.taxCalculationComponent = taxCalculationComponent;
+    }
 
     public TaxInformation getTaxInformation(Article article) {
         TaxRate taxRate = taxRateDao.getTaxRate(article);

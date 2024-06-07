@@ -30,5 +30,7 @@ public class SpringBean {
 VM options:
 -Dapp-home=spring-professional-cert-udemy\\app-home -Dexternal.service=service01
 
-to access app-home folder
+to access app-home folder and create a variable called external.service
+
+JAVA_HOME is an Environment Variable
  */

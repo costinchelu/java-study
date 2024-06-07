@@ -13,16 +13,16 @@ public class PersonDaoProxy implements PersonDao {
 
     @Override
     public Person findById(int id) {
-        System.out.println("before findById");
+        System.out.println("LOGGING - before findById");
         Person person = personDao.findById(id);
-        System.out.println("after findById");
+        System.out.println("LOGGING - after findById");
         return person;
     }
 
     @Override
     public void save(Person person) {
-        System.out.println("before save");
+        System.out.println("LOGGING - before save");
         personDao.save(person);
-        System.out.println("after save");
+        System.out.println("LOGGING - after save");
     }
 }

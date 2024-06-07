@@ -16,8 +16,10 @@ import static org.mockito.Mockito.verify;
 @RunWith(SpringRunner.class)
 @ContextConfiguration(classes = ApplicationConfig.class)
 public class ReportServiceTest01 {
+
     @Autowired
     private ReportService reportService;
+
     @MockBean
     private ReportWriter reportWriter;
 

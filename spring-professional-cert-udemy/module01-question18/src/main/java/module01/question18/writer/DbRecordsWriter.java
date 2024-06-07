@@ -9,6 +9,7 @@ import java.util.Collection;
 @Component
 @Qualifier("db-writer")
 public class DbRecordsWriter implements RecordsWriter {
+
     @Override
     public void writeRecords(Collection<Record> records) {
 

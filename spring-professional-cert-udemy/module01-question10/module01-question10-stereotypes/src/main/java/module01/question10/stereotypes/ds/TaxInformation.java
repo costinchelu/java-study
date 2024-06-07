@@ -1,21 +1,5 @@
 package module01.question10.stereotypes.ds;
 
-public class TaxInformation {
+public record TaxInformation(Article article, TaxCalculation taxCalculation) {
 
-    private final Article article;
-
-    private final TaxCalculation taxCalculation;
-
-    public TaxInformation(Article article, TaxCalculation taxCalculation) {
-        this.article = article;
-        this.taxCalculation = taxCalculation;
-    }
-
-    public Article getArticle() {
-        return article;
-    }
-
-    public TaxCalculation getTaxCalculation() {
-        return taxCalculation;
-    }
 }

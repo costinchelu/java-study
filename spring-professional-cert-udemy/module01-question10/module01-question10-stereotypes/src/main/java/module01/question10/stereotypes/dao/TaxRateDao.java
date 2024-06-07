@@ -6,6 +6,7 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public class TaxRateDao {
+
     public TaxRate getTaxRate(Article article) {
         return new TaxRate();
     }

@@ -8,6 +8,7 @@ import java.util.Collection;
 @Component
 @RecordsValidatorType(RecordsValidatorType.RecordsValidatorMode.DB)
 public class DbRecordsValidator implements RecordsValidator {
+
     @Override
     public void validate(Collection<Record> records) {
 

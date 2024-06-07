@@ -20,10 +20,12 @@ import static org.mockito.Mockito.verify;
 @ContextConfiguration(classes = ApplicationConfig.class)
 @TestPropertySource(properties = "report.global.name=" + REPORT_NAME)
 public class ReportServiceTest04 {
+
     static final String REPORT_NAME = "Mock_Report";
 
     @Autowired
     private ReportService reportService;
+
     @MockBean
     private ReportWriter reportWriter;
 

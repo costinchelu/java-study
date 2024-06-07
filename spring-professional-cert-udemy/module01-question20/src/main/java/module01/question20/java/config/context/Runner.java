@@ -5,9 +5,9 @@ import module01.question20.java.config.context.beans.SpringBean3;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class Runner {
+
     public static void main(String[] args) {
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(ApplicationConfig.class);
-
         context.registerShutdownHook();
 
         SpringBean1 springBean1 = context.getBean(SpringBean1.class);

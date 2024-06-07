@@ -12,6 +12,7 @@ import java.security.MessageDigest;
 
 @Configuration
 public class ApplicationConfig {
+
     @Bean
     @Autowired
     public SpringBean1 springBean1(SpringBean2 springBean2, SpringBean3 springBean3) {

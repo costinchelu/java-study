@@ -15,9 +15,9 @@ public class PersonDaoInvocationHandler implements InvocationHandler {
 
     @Override
     public Object invoke(Object obj, Method method, Object[] args) throws Throwable {
-        System.out.println("before " + method.getName());
+        System.out.println("LOGGING - before " + method.getName());
         Object result = method.invoke(target, args);
-        System.out.println("after " + method.getName());
+        System.out.println("LOGGING - after " + method.getName());
         return result;
     }
 }

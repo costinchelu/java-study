@@ -9,6 +9,7 @@ import java.util.Collection;
 @Component
 @Qualifier("file-writer")
 public class FileRecordsWriter implements RecordsWriter {
+
     @Override
     public void writeRecords(Collection<Record> records) {
 

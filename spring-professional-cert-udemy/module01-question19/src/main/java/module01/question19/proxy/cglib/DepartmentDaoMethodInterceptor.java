@@ -6,6 +6,7 @@ import org.springframework.cglib.proxy.MethodProxy;
 import java.lang.reflect.Method;
 
 public class DepartmentDaoMethodInterceptor implements MethodInterceptor {
+
     @Override
     public Object intercept(Object object, Method method, Object[] args, MethodProxy methodProxy) throws Throwable {
         System.out.println("before " + method.getName());

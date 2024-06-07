@@ -13,8 +13,10 @@ import static org.mockito.Mockito.verify;
 
 @RunWith(MockitoJUnitRunner.class)
 public class ReportServiceTest02 {
+
     @InjectMocks
     private ReportService reportService;
+
     @Mock
     private ReportWriter reportWriter;
 

@@ -11,6 +11,7 @@ public class ReportService {
 
     @Autowired
     private ReportWriter reportWriter;
+
     @Value("${report.global.name}")
     private String reportGlobalName;
 
@@ -18,7 +19,7 @@ public class ReportService {
         Report report = new Report();
 
         // ...
-
+        System.out.println(reportGlobalName);
         reportWriter.write(report, reportGlobalName);
     }
 }
