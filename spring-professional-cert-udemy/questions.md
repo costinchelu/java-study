@@ -48,13 +48,14 @@
 &nbsp
 ### 21. What does the @Bean annotation do?
 &nbsp
-### 22. 
+### 22. What is the default bean id if you only use @Bean and how can it be overridden?
 &nbsp
-### 23. 
+### 23. Why are we not allowed to annotate a final class with @Configuration and a final method with @Bean?
+### 23. How do @Configuration annotated classes support singleton beans?
 &nbsp
-### 24. 
+### 24. How to configure profiles and when are they useful?
 &nbsp
-### 25. 
+### 25. Can you use @Bean together with @Profile?
 &nbsp
 ### 26. 
 &nbsp

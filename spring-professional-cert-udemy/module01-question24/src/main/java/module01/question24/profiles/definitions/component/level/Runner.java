@@ -4,6 +4,7 @@ import module01.question24.profiles.definitions.component.level.service.Financia
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class Runner {
+
     public static void main(String[] args) {
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext();
         context.registerShutdownHook();

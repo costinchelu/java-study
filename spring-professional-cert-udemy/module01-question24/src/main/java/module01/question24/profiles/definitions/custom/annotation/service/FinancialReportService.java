@@ -11,10 +11,14 @@ import org.springframework.stereotype.Component;
 @Component
 public class FinancialReportService {
 
-    @Autowired
-    private FinancialDataDao financialDataDao;
-    @Autowired
-    private FinancialReportWriter financialReportWriter;
+    private final FinancialDataDao financialDataDao;
+
+    private final FinancialReportWriter financialReportWriter;
+
+    public FinancialReportService(FinancialDataDao financialDataDao, FinancialReportWriter financialReportWriter) {
+        this.financialDataDao = financialDataDao;
+        this.financialReportWriter = financialReportWriter;
+    }
 
     public void generateReport() {
         FinancialYearSummary financialYearSummary = financialDataDao.findFinancialYearSummary(2019);

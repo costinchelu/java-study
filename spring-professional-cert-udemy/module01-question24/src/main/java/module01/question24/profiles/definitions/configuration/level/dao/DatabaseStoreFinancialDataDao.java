@@ -5,6 +5,7 @@ import module01.question24.profiles.definitions.configuration.level.ds.Financial
 import module01.question24.profiles.definitions.configuration.level.ds.FinancialYearSummary;
 
 public class DatabaseStoreFinancialDataDao implements FinancialDataDao {
+
     @Override
     public FinancialYearSummary findFinancialYearSummary(int year) {
         System.out.println("Database Dao => findFinancialYearSummary");

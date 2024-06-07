@@ -5,6 +5,7 @@ import module01.question24.profiles.definitions.component.level.ds.FinancialQuar
 import module01.question24.profiles.definitions.component.level.ds.FinancialYearSummary;
 
 public interface FinancialDataDao {
+
     FinancialYearSummary findFinancialYearSummary(int year);
 
     FinancialQuarterSummary findFinancialQuarterSummary(int year, int quarter);

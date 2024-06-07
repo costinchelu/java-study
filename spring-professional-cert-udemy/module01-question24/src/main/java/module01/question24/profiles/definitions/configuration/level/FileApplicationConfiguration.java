@@ -11,6 +11,7 @@ import org.springframework.context.annotation.Profile;
 @Configuration
 @Profile("file")
 public class FileApplicationConfiguration {
+
     @Bean
     public FinancialDataDao fileStoreFinancialDataDao() {
         return new FileStoreFinancialDataDao();

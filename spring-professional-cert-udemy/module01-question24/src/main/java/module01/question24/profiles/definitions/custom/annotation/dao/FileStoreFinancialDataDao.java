@@ -9,6 +9,7 @@ import org.springframework.stereotype.Component;
 @Component
 @FileProfile
 class FileStoreFinancialDataDao implements FinancialDataDao {
+
     @Override
     public FinancialYearSummary findFinancialYearSummary(int year) {
         System.out.println("File Dao => findFinancialYearSummary");

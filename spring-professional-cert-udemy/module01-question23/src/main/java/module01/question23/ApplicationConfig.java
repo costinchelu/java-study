@@ -8,6 +8,7 @@ import org.springframework.context.annotation.Scope;
 
 @Configuration
 public class ApplicationConfig {
+
     @Bean
     public SpringBean1 springBean1() {
         System.out.println("Creating Bean " + SpringBean1.class.getSimpleName());

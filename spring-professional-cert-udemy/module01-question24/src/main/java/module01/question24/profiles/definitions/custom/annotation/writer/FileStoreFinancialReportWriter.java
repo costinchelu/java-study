@@ -9,6 +9,7 @@ import org.springframework.stereotype.Component;
 @Component
 @FileProfile
 class FileStoreFinancialReportWriter implements FinancialReportWriter {
+
     @Override
     public void appendFreeText(String title) {
         System.out.println("File Writer => appendFreeText");

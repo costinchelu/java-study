@@ -12,6 +12,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 @ContextConfiguration(classes = ApplicationConfig.class)
 @ActiveProfiles("database")
 public class ApplicationConfigTest {
+
     @Autowired
     private FinancialDataDao financialDataDao;
 

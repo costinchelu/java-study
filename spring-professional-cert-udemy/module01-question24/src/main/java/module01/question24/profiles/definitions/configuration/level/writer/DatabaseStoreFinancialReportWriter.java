@@ -5,6 +5,7 @@ import module01.question24.profiles.definitions.configuration.level.ds.Financial
 import module01.question24.profiles.definitions.configuration.level.ds.FinancialYearSummary;
 
 public class DatabaseStoreFinancialReportWriter implements FinancialReportWriter {
+
     @Override
     public void appendFreeText(String title) {
         System.out.println("Database Writer => appendFreeText");

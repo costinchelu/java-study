@@ -11,6 +11,7 @@ import org.springframework.stereotype.Component;
 public class FinancialReportService {
 
     private final FinancialDataDao financialDataDao;
+
     private final FinancialReportWriter financialReportWriter;
 
     public FinancialReportService(FinancialDataDao financialDataDao, FinancialReportWriter financialReportWriter) {

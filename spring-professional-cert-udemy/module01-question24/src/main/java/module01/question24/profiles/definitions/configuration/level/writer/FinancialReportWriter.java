@@ -5,6 +5,7 @@ import module01.question24.profiles.definitions.configuration.level.ds.Financial
 import module01.question24.profiles.definitions.configuration.level.ds.FinancialYearSummary;
 
 public interface FinancialReportWriter {
+
     void appendFreeText(String title);
 
     void appendFinancialYearSummary(FinancialYearSummary financialYearSummary);

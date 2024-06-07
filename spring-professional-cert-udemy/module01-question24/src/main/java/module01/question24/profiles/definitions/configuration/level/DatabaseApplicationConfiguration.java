@@ -11,6 +11,7 @@ import org.springframework.context.annotation.Profile;
 @Configuration
 @Profile("database")
 public class DatabaseApplicationConfiguration {
+
     @Bean
     public FinancialDataDao databaseStoreFinancialDataDao() {
         return new DatabaseStoreFinancialDataDao();

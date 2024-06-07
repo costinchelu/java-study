@@ -8,6 +8,7 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class ApplicationConfig {
+
     @Bean
     public SpringBean1 springBean1() {
         return new SpringBean1();
