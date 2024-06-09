@@ -4,6 +4,7 @@ import module01.question34.beans.SpringBean;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class Runner {
+
     public static void main(String[] args) {
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(ApplicationConfiguration.class);
         context.registerShutdownHook();
@@ -14,7 +15,7 @@ public class Runner {
         System.out.println(springBean.getJavaHome());
         System.out.println(springBean.getOsName());
         System.out.println(springBean.getAdditionResult());
-        System.out.println(springBean.getCityName());
+        System.out.println(springBean.getCityNameUppercase());
         System.out.println(springBean.getCurrentDate());
         System.out.println(springBean.getJavaHomeSpel());
     }

@@ -11,6 +11,7 @@ import org.springframework.core.convert.support.DefaultConversionService;
 @ComponentScan
 @PropertySource("application.properties")
 public class ApplicationConfiguration {
+
     @Bean
     public ConversionService conversionService() {
         return new DefaultConversionService();

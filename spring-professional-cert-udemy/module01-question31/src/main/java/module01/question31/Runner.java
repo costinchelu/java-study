@@ -6,12 +6,15 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import java.util.Arrays;
 
 public class Runner {
+
     public static void main(String[] args) {
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext();
         context.registerShutdownHook();
 
+        // in environment variables: app.env.property=appEnvProperty
+        // in VM options:  -Dspring.profiles.active="profile1,profile2,profile3" -Dapp.vm.property=appVmProperty
+        // we can set profiles also using setActiveProfiles:
         //context.getEnvironment().setActiveProfiles("profile1", "profile2", "profile3");
-        // -Dspring.profiles.active="profile1,profile2,profile3"
 
         context.register(ApplicationConfiguration.class);
         context.refresh();

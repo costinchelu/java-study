@@ -6,6 +6,7 @@ import org.springframework.stereotype.Component;
 public class SpringBean2 {
 
     public static final String STATIC_VALUE = "staticFieldValue";
+
     public String property = "propertyValue";
 
     public static String staticMethod() {

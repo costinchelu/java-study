@@ -5,6 +5,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class SpringBean2 {
+
     @Value("3")
     private int taxId;
 

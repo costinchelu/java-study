@@ -6,6 +6,7 @@ import org.springframework.expression.spel.SpelParserConfiguration;
 import org.springframework.expression.spel.standard.SpelExpressionParser;
 
 public class Runner3 {
+
     public static void main(String[] args) {
         ExpressionParser parser = new SpelExpressionParser(
                 new SpelParserConfiguration(SpelCompilerMode.IMMEDIATE, Runner3.class.getClassLoader())

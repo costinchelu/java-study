@@ -5,18 +5,27 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class SpringBean {
+
+    // taken from application.properties
     @Value("${app.default.property}")
     private String appDefaultProperty;
+
+    // application.properties loads the dev profile and so this property is taken from application-dev.properties
     @Value("${app.dev.property}")
     private String appDevProperty;
+
     @Value("${app.vm.property}")
     private String appVmProperty;
+
     @Value("${app.env.property}")
     private String appEnvProperty;
+
     @Value("${app.json.property}")
     private String appJsonProperty;
+
     @Value("${app.cli.property}")
     private String appCliProperty;
+
     @Value("${random.int}")
     private int appRandomProperty;
 

@@ -57,20 +57,20 @@
 &nbsp
 ### 25. Can you use @Bean together with @Profile?
 &nbsp
-### 26. 
+### 26. Can you use @Component together with @Profile?
 &nbsp
-### 27. 
+### 27. How many profiles can you have?
 &nbsp
-### 28. 
+### 28. How do inject scalar/literal values into Spring beans?
 &nbsp
-### 29. 
+### 29. What is @Value annotation used for?
 &nbsp
-### 30. 
+### 30. What is Spring Expression Language (SpEL for short)?
 &nbsp
-### 31. 
+### 31. What is the Environment abstraction in Spring?
 &nbsp
-### 32. 
+### 32. Where can properties in the environment come from?
 &nbsp
-### 33. 
+### 33. What can you reference using SpEL?
 &nbsp
-### 34. 
+### 34. What is the difference between $ and # in @Value expressions?

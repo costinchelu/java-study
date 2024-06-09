@@ -10,6 +10,7 @@ import java.util.Set;
 
 @Component
 public class SpringBean1 {
+
     @Value("John")
     private String name;
 
@@ -64,7 +65,9 @@ public class SpringBean1 {
     }
 
     @Autowired
-    public void setSupportPhoneAndAddress(@Value("${app.support.phone}") String supportPhone, @Value("${app.support.address}") String supportAddress) {
+    public void setSupportPhoneAndAddress(
+            @Value("${app.support.phone}") String supportPhone,
+            @Value("${app.support.address}") String supportAddress) {
         this.supportPhone = supportPhone;
         this.supportAddress = supportAddress;
     }

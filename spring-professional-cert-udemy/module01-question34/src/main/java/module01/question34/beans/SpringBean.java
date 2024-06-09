@@ -10,17 +10,22 @@ public class SpringBean {
 
     @Value("${app.file.property}")
     private String appFileProperty;
+
     @Value("${JAVA_HOME}")
     private String javaHome;
+
     @Value("${OS}")
     private String osName;
 
     @Value("#{2 + 2}")
     private int additionResult;
+
     @Value("#{'New York'.toUpperCase()}")
-    private String cityName;
+    private String cityNameUppercase;
+
     @Value("#{T(java.time.LocalDateTime).now()}")
     private LocalDateTime currentDate;
+
     @Value("#{systemEnvironment['JAVA_HOME']}")
     private String javaHomeSpel;
 
@@ -40,8 +45,8 @@ public class SpringBean {
         return additionResult;
     }
 
-    public String getCityName() {
-        return cityName;
+    public String getCityNameUppercase() {
+        return cityNameUppercase;
     }
 
     public LocalDateTime getCurrentDate() {

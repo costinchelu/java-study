@@ -7,6 +7,7 @@ import java.util.Map;
 
 @Component
 public class SpringBean1 {
+
     @Value("#{'Wall Street'.toUpperCase()}")
     private String streetName;
 

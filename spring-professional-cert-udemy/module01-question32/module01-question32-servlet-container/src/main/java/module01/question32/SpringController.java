@@ -10,14 +10,19 @@ public class SpringController {
 
     @Value("${app.context.param}")
     private String appContextParam;
+
     @Value("${app.file.property}")
     private String appFileProperty;
+
     @Value("${app.vm.property}")
     private String appVmProperty;
+
     @Value("${user.home}")
     private String userHome;
+
     @Value("${JAVA_HOME}")
     private String javaHome;
+
     @Value("${MAVEN_HOME}")
     private String mavenHome;
 

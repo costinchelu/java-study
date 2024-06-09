@@ -10,6 +10,7 @@ import java.util.Set;
 
 @Component
 public class SpringBean {
+
     @Value("John")
     private String name;
 
@@ -51,17 +52,22 @@ public class SpringBean {
     @Value("#{${app.cases.map}}")
     private Map<String, Integer> casesMap;
 
+    // injection in constructor
     public SpringBean(@Value("#{'${app.manager.name}'.toUpperCase()}") String managerName) {
         this.managerName = managerName;
     }
 
+    // injection at method level
     @Value("${app.support.contact}")
     public void setSupportContactMail(String supportContactMail) {
         this.supportContactMail = supportContactMail;
     }
 
+    // injection at parameter level (need @Autowired annotation too)
     @Autowired
-    public void setSupportPhoneAndAddress(@Value("${app.support.phone}") String supportPhone, @Value("${app.support.address}") String supportAddress) {
+    public void setSupportPhoneAndAddress(
+            @Value("${app.support.phone}") String supportPhone,
+            @Value("${app.support.address}") String supportAddress) {
         this.supportPhone = supportPhone;
         this.supportAddress = supportAddress;
     }
