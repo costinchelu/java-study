@@ -12,7 +12,6 @@
         <module>design-patterns</module>
         <module>java-jdbc</module>
         <module>java-security</module>
-        <module>starter-projects</module>
         <module>java-concurrency</module>
         <module>java-8-date-time</module>
         <module>libraries-demo</module>
@@ -21,16 +20,8 @@
         <module>java-problems</module>
         <module>java-how-to</module>
         <module>sftp-client</module>
-        <module>spring-projects</module>
-        <module>spring-batch</module>
-        <module>spring-in-action</module>
-        <module>spring-laur-spilca</module>
-        <module>spring-hibernate-chad-darby</module>
-        <module>master-hibernate-in-100-steps</module>
         <module>java-masterclass-tim-buchalka</module>
         <module>unit-testing</module>
-        <module>spring-jdbc-vs-jpa-inserts-test</module>
-        <module>spring-boot-javafx</module>
         <module>java-io</module>
     </modules>
 
