@@ -21,7 +21,7 @@ public class Demo {
      * environment options.
      */
     static void configure() {
-        if (System.getProperty("os.name").equals("Windows 10")) {
+        if (System.getProperty("os.name").equals("Mac OS X")) {
             dialog = new WindowsDialog();
         } else {
             dialog = new HtmlDialog();

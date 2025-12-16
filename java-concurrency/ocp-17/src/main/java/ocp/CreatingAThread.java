@@ -4,7 +4,7 @@ public class CreatingAThread {
 
     public static void main(String[] args) {
 
-        // one liner
+        // one-liner
         new Thread(() -> System.out.println("Hello "))
                 .start();
 

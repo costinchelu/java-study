@@ -56,16 +56,7 @@ class SimpleFactory {
         ITEM1, ITEM2
     }
 
-    public static IItemsFamily create(ItemType type) throws Exception {
-//        switch (type) {
-//            case ITEM1 -> {
-//                return new Item1();
-//            }
-//            case ITEM2 -> {
-//                return new Item2();
-//            }
-//            default -> throw new Exception("Not a correct type");
-//        }
+    public static IItemsFamily create(ItemType type) {
         return switch (type) {
             case ITEM1 -> new Item1();
             case ITEM2 -> new Item2();
@@ -74,7 +65,7 @@ class SimpleFactory {
 }
 
 
-class Demo {
+class FactoryDemo {
 
     public static void main(String[] args) {
         Item1 item1 = (Item1) createAnItem(new FactoryItem1());

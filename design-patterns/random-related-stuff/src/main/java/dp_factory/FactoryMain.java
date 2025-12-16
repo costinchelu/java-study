@@ -27,16 +27,12 @@ public class FactoryMain {
    static private class ProductFactory {
 
       public static Product createProduct(String name) {
-         switch (name) {
-            case "loan":
-               return new Loan();
-            case "stock":
-               return new Stock();
-            case "bond":
-               return new Bond();
-            default:
-               throw new RuntimeException("No such product " + name);
-         }
+          return switch (name) {
+              case "loan" -> new Loan();
+              case "stock" -> new Stock();
+              case "bond" -> new Bond();
+              default -> throw new RuntimeException("No such product " + name);
+          };
       }
 
       public static Product createProductLambda(String name) {

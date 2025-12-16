@@ -1,4 +1,4 @@
-package structural.Template;
+package structural.template;
 
 import lombok.AllArgsConstructor;
 
