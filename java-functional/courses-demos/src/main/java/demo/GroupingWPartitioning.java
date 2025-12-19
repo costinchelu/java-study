@@ -24,6 +24,7 @@ public class GroupingWPartitioning {
         Map<Boolean, List<Dish>> partitionedMenu =
                 menu.stream()
                         .collect(partitioningBy(Dish::isVegetarian));
+
         List<Dish> vegetarianDishes = partitionedMenu.get(true);
         /*
         only the "true" key is selected from the partitionedMenu map

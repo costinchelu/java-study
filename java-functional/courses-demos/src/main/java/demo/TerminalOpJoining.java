@@ -36,6 +36,6 @@ public class TerminalOpJoining {
         List<String[]> listOfArray = titles
                 .stream()
                 .map(course -> course.split(""))
-                .collect(toList());
+                .toList();
     }
 }

@@ -1,7 +1,16 @@
 package demo;
 
 import java.util.Random;
-import java.util.function.*;
+import java.util.function.BiConsumer;
+import java.util.function.BiFunction;
+import java.util.function.BiPredicate;
+import java.util.function.BinaryOperator;
+import java.util.function.Consumer;
+import java.util.function.Function;
+import java.util.function.IntBinaryOperator;
+import java.util.function.Predicate;
+import java.util.function.Supplier;
+import java.util.function.UnaryOperator;
 
 public class BasicBuiltInFunctionalInterfaces {
 
@@ -10,7 +19,7 @@ public class BasicBuiltInFunctionalInterfaces {
     public static void main(String[] args) {
 
         Predicate<Integer> predicate = x -> x % 2 == 0;
-        //-> predicate -> returns boolean
+        //-> predicate -> receives a parameter and returns boolean
 
         Consumer<Integer> consumer = System.out::println;
         //-> consumer -> receives a parameter and returns nothing
@@ -22,7 +31,7 @@ public class BasicBuiltInFunctionalInterfaces {
         //-> function -> receive a parameter and returns a result
 
         UnaryOperator<Integer> unaryOperator = x -> 3 * x;
-        //-> operator -> returns the type it receives as a parameter
+        //-> operator -> like Function but returns the type it receives as a parameter
 
         // bi versions of previous classes
         BiPredicate<Integer, String> biPredicate = (number, string) -> number > 5 && string.length() > 5;
@@ -33,6 +42,7 @@ public class BasicBuiltInFunctionalInterfaces {
         // We can avoid using wrapper classes when primitives are required bi using primitive functions
         // java.util.function also have primitive functions like IntBinaryOperator:
         IntBinaryOperator intBinaryOperator = (int1, int2) -> int1 + int2;
+//        IntBinaryOperator intBinaryOperator = Integer::sum;
         System.out.println(intBinaryOperator.applyAsInt(NO_1, NO_2));
 
         Function<Integer, Integer> f = x -> x + 1;

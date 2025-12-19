@@ -20,7 +20,7 @@ import static org.junit.jupiter.api.Assumptions.assumeTrue;
 
 class BMICalculatorTest {
 
-    private String environment = "dev";
+    private final String environment = "dev";
 
     // nested
     // we can group tests within the suite using inner classes

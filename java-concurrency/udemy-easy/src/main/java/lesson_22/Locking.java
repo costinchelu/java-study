@@ -32,25 +32,19 @@ public class Locking {
     public static void main(String[] args) {
         Worker worker = new Worker();
 
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    worker.producer();
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
+        new Thread(() -> {
+            try {
+                worker.producer();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
             }
         }).start();
 
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    worker.consumer();
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
+        new Thread(() -> {
+            try {
+                worker.consumer();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
             }
         }).start();
 

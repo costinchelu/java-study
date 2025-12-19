@@ -11,7 +11,9 @@ import static org.mockito.Mockito.when;
 
 class InlineStubbingTest {
 
-    Stock globalStock = when(Mockito.mock(Stock.class).getPrice()).thenReturn(BigDecimal.ONE).getMock();
+    Stock globalStock = when(Mockito.mock(Stock.class).getPrice())
+            .thenReturn(BigDecimal.ONE)
+            .getMock();
 
     @Test
     void access_global_mock() {

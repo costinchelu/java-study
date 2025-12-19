@@ -25,24 +25,7 @@ public class IntermediateOpLimitSkipTakeWhile {
                         .thenComparing(Course::getReviewScore)
                         .reversed();
 
-        // limiting to top 5 results
-        List<Course> limit5SortedCourses =
-                coursesList.stream()
-                        .sorted(comparingByNoOfStudentsAndReviewScore)
-                        .limit(5)
-                        .collect(Collectors.toList());
-
-        System.out.println(limit5SortedCourses);
-
-        // skipping top 3 results
-        List<Course> skipping3SortedCourses =
-                coursesList.stream()
-                        .sorted(comparingByNoOfStudentsAndReviewScore)
-                        .skip(3)
-                        .collect(Collectors.toList());
-
-        System.out.println(skipping3SortedCourses);
-
+        // skipping top 3 results then limiting to top 3 results from what remained
         // these 2 are intermediary operations so they can be combined
         List<Course> skipAndLimit =
                 coursesList.stream()
@@ -54,7 +37,7 @@ public class IntermediateOpLimitSkipTakeWhile {
         System.out.println(skipAndLimit);
 
         // return all elements of the list until one of the list elements has a review score of 91
-        // so if one of the elements breaks the criteria in the takeWhile, we will skipp all elements
+        // so if one of the elements breaks the criteria in the takeWhile, we will skip all elements
         //from the stream after that particular element
         List<Course> firstCoursesUntilReviewOf92 =
                 coursesList.stream()

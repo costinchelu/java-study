@@ -151,17 +151,16 @@ public class GroupingStringExamples {
         System.out.println(result); //result {1=A, 2=BC, 3=D}
     }
 
+    private static void example13(List<String> strings) {
+        String result = String.valueOf(strings.stream()
+                .collect(maxBy(Comparator.comparingInt(String::length))));
+        System.out.println(result);
+    }
+
     private static Function<String, List<String>> toStringList() {
         return s -> s.chars()
                 .mapToObj(String::valueOf)
                 .map(Object::toString)
                 .collect(toList());
-    }
-
-
-
-    private static void example13(List<String> strings) {
-        String result = String.valueOf(strings.stream().collect(maxBy(Comparator.comparingInt(String::length))));
-        System.out.println(result);
     }
 }

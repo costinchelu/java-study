@@ -12,9 +12,8 @@ public class BasicPredicate {
     private static final List<Integer> numbers = List.of(12, 9, 13, 4, 6, 2, 4, 12, 15);
 
     public static void main(String[] args) {
-        // print even:
+        // print even/odd:
         numbers.stream().filter(x -> x % 2 == 0).forEach(System.out::println);
-        // print odd:
         numbers.stream().filter(x -> x % 2 != 0).forEach(System.out::println);
 
         // the two operations are pretty similar...

@@ -57,7 +57,7 @@ public class IntermediateOpReduceRanged {
                 .filter(n -> n <= 500)
                 .limit(10)
                 .boxed()
-                .collect(Collectors.toList());
+                .toList();
         System.out.println(randomInts);
 
         // Factorial operations gives very big numbers.
@@ -72,6 +72,7 @@ public class IntermediateOpReduceRanged {
 
         System.out.println("Found " + countWordsIteratively(SENTENCE) + " words");
         System.out.println("Found " + countWords(sentenceStream) + " words");
+        System.out.println("Found " + SENTENCE.strip().split(" ").length);
     }
 
     private static int countWordsIteratively(String s) {
@@ -98,11 +99,6 @@ public class IntermediateOpReduceRanged {
 
 
 record WordCounter(int counter, boolean lastSpace) {
-
-    public WordCounter(int counter, boolean lastSpace) {
-        this.counter = counter;
-        this.lastSpace = lastSpace;
-    }
 
     public WordCounter accumulate(Character c) {
         if (Character.isWhitespace(c)) {

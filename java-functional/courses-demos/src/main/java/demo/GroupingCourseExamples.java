@@ -26,33 +26,40 @@ public class GroupingCourseExamples {
         // getting a map of courses classified (grouped) by course category
         Map<String, List<Course>> mapByCategory =
                 courses.stream()
-                        .collect(Collectors.groupingBy(c -> c.getCategory().getCourseName()));
+                        .collect(Collectors.groupingBy(
+                                course -> course.getCategory().getCourseName()
+                        ));
 
         System.out.println(mapByCategory);
 
-        // getting a map of categories with a count value (pass a function to create a value)
+        // getting a map of categories with a count for each (pass a function to create a value)
         Map<String, Long> noOfCoursesByCategory =
                 courses.stream()
                         .collect(Collectors.groupingBy(
-                                c -> c.getCategory().getCourseName(),
-                                Collectors.counting()));
+                                course -> course.getCategory().getCourseName(),
+                                Collectors.counting()
+                        ));
 
         // getting a map consisting of the highest review for a particular course category
         Map<String, Optional<Course>> highestReviewInCategory =
                 courses.stream()
                         .collect(Collectors.groupingBy(
-                                c -> c.getCategory().getCourseName(),
+                                course -> course.getCategory().getCourseName(),
                                 Collectors.maxBy(
-                                        Comparator.comparingInt(Course::getReviewScore))));
+                                        Comparator.comparingInt(Course::getReviewScore)
+                                )
+                        ));
 
         // getting a map consisting of names of the courses by category
         Map<String, List<String>> highestReviewNames =
                 courses.stream()
                         .collect(Collectors.groupingBy(
-                                c -> c.getCategory().getCourseName(),
+                                course -> course.getCategory().getCourseName(),
                                 Collectors.mapping(
                                         Course::getName,
-                                        Collectors.toList())));
+                                        Collectors.toList()
+                                )
+                        ));
 
         System.out.println(highestReviewNames);
 

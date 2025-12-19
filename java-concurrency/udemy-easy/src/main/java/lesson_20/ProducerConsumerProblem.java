@@ -37,7 +37,7 @@ class Processor {
                     System.out.println("Waiting for producer to fill the list...");
                     lock.wait();
                 } else {
-                    int consumed =  list.remove(list.size() - 1);
+                    int consumed =  list.removeLast();
                     System.out.println("Consuming: " + consumed);
                     lock.notify();
                 }
@@ -63,14 +63,11 @@ public class ProducerConsumerProblem {
             }
         });
 
-        Thread t2 = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    processor.consumer();
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
+        Thread t2 = new Thread(() -> {
+            try {
+                processor.consumer();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
             }
         });
 

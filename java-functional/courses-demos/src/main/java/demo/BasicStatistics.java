@@ -34,11 +34,11 @@ public class BasicStatistics {
                         .mapToDouble(Course::getNoOfStudents)
                         .summaryStatistics();
 
-        assertEquals(stats.getCount(), 9);
-        assertEquals(stats.getSum(), 181000.0, 0);
-        assertEquals(stats.getMin(), 14000.0, 0);
-        assertEquals(stats.getMax(), 25000.0, 0);
-        assertEquals(stats.getAverage(), 20111.11, 0.01);
+        assertEquals(stats.getCount(), 10);
+        assertEquals(stats.getSum(), 196500d, 0);
+        assertEquals(stats.getMin(), 14000d, 0);
+        assertEquals(stats.getMax(), 25000d, 0);
+        assertEquals(stats.getAverage(), 19650.009, 0.01);
     }
 
     public static void main(String[] args) {

@@ -33,8 +33,8 @@ class AssertTest {
 
     @Test
     void assertSameTest() {
-        Integer i = Integer.parseInt("5");
-        Integer j = Integer.parseInt("5");
+        Integer i = Integer.parseInt("130");
+        Integer j = Integer.parseInt("130");
         Integer k = j;
         assertAll(
                 () -> assertNotSame(i, j),

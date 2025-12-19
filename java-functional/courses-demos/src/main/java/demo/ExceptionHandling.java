@@ -10,13 +10,23 @@ public class ExceptionHandling {
     public static void main(String[] args) {
         List<String> list = List.of("10", "20", "30yyy");
 
-        list.stream().map(Integer::parseInt).forEach(System.out::println);
+        // throws NumberFormatException
+        // list.stream().map(Integer::parseInt).forEach(System.out::println); n
+
+        // handles exception by displaying the message
         list.forEach(ExceptionHandling::printList);
+
+        // handles exception by displaying the element
         list.forEach(handleExceptionIfAny(System.out::println));
+
+        // handles exception by displaying the message
         list.forEach(handleGenericException(s -> System.out.println(Integer.parseInt(s)), NumberFormatException.class));
 
         List<Integer> list2 = List.of(10, 20, 30);
 
+        // Thread.sleep can throw InterruptedException (a checked exception).
+        // handleCheckedExceptionConsumer catches this and wraps it in a RuntimeException,
+        // so we don't have to handle it explicitly in the stream operation.
         list2.forEach(handleCheckedExceptionConsumer(i -> {
             Thread.sleep(i);
             System.out.println(i);
@@ -49,7 +59,7 @@ public class ExceptionHandling {
             } catch (Exception ex) {
                 try {
                     ExObj exObj = exObjClass.cast(ex);
-                    System.out.println(EXCEPTION_MSG + exObj.getMessage());
+                    System.out.println(exObjClass + EXCEPTION_MSG + exObj.getMessage());
                 } catch (ClassCastException ecx) {
                     throw ex;
                 }

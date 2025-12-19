@@ -20,6 +20,7 @@ public class BasicConsumer {
 
         b1.accept("chicken", 7);
         b2.accept("chick", 1);
+
         System.out.println(map); // {chicken=7, chick=1}
         // BiConsumer can use the same type for both the T and U generic parameters.
     }

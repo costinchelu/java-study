@@ -13,21 +13,20 @@ public class IntermediateOpFlatMap {
     public static void main(String[] args) {
         List<String> titles = List.of("Spring", "Spring Boot", "Stream API", "Microservices", "Docker", "Linux", "Python", "React", "Java 8");
 
-        // for a list letters made from the stream:
+        // form a list letters made from the stream:
         List<String> listOfLetters = titles
                 .stream()
                 .map(course -> course.split(""))
                 .flatMap(Arrays::stream)
                 .collect(toList());
 
-        // same but non-repeating and ordered:
         List<String> distinctSortedLetters = titles
                 .stream()
                 .map(course -> course.split(""))
                 .flatMap(Arrays::stream)
                 .distinct()
                 .sorted()
-                .collect(toList());
+                .toList();
 
         // convert the list to an array of letters
         String[] letterArr = titles
@@ -38,13 +37,16 @@ public class IntermediateOpFlatMap {
 
         System.out.println("---------------------");
 
-        List<Integer> numbers1 = Arrays.asList(1, 2, 3);
-        List<Integer> numbers2 = Arrays.asList(3, 4);
+        List<Integer> numbers1 = List.of(1, 2, 3);
+        List<Integer> numbers2 = List.of(3, 4);
 
         List<int[]> pairs = numbers1.stream().
                 flatMap(i -> numbers2.stream()
                         .filter(j -> (i + j) % 3 == 0)
-                        .map(j -> new int[]{i, j}))
-                .collect(toList());
+                        .map(j -> new int[]{i, j})
+                )
+                .toList();
+
+        pairs.forEach(arr -> System.out.println(Arrays.toString(arr)));
     }
 }

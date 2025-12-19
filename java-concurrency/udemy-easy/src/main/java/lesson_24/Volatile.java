@@ -39,7 +39,7 @@ public class Volatile {
         t1.start();
 
         try {
-            Thread.sleep(900);
+            Thread.sleep(1100);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

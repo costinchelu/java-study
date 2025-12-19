@@ -14,15 +14,15 @@ public class BasicBiPredicateBiConsumerBiFunction {
         BiFunction<String, String, Integer> biFunction = (str1, str2) -> str1.length() + str2.length();
         System.out.println(biFunction.apply("example 1", "example 2"));
 
-        BiConsumer<Integer, String> biConsumer = getIntegerStringBiConsumer();
+        BiConsumer<Integer, String> biConsumer = consumeIntStr();
         biConsumer.accept(15, "text");
     }
 
-    private static BiConsumer<Integer, String> getIntegerStringBiConsumer() {
-        return (s1, s2) -> {
+    private static BiConsumer<Integer, String> consumeIntStr() {
+        return (inputInt, inputStr) -> {
             System.out.println("--biconsumer-");
-            System.out.println(s1);
-            System.out.println(s2);
+            System.out.println(inputInt);
+            System.out.println(inputStr);
             System.out.println("--biconsumer-");
         };
     }

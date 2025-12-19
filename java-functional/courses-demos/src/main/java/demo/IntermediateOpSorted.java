@@ -37,7 +37,7 @@ public class IntermediateOpSorted {
         List<Course> sortedByNoOfStudentsDescent =
                 coursesList.stream()
                 .sorted(comparingByNoOfStudentsDesc)
-                .collect(Collectors.toList());
+                .toList();
 
         List<Course> sortedByNoOfStudentsAndReviewScore =
                 coursesList.stream()

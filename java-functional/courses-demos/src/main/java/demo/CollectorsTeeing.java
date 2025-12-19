@@ -18,8 +18,8 @@ public class CollectorsTeeing {
                         Collectors.joining(","),
                         Separations::new
                 ));
-        System.out.println(collect); // Separations[spaceSepparated=x y z, commaSepparated=x,y,z]
+        System.out.println(collect); // Separations[spaceSeparated=x y z, commaSeparated=x,y,z]
     }
 }
 
-record Separations(String spaceSepparated, String commaSepparated) {}
+record Separations(String spaceSeparated, String commaSeparated) {}

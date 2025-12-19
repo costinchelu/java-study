@@ -36,12 +36,9 @@ public class Synchronization {
             }
         }, "t1");
 
-        Thread t2 = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                for (int i = 0; i < 10; i++) {
-                    increment2();
-                }
+        Thread t2 = new Thread(() -> {
+            for (int i = 0; i < 10; i++) {
+                increment2();
             }
         }, "t2");
 

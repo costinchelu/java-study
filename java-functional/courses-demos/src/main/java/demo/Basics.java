@@ -6,6 +6,7 @@ import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.function.Supplier;
+import java.util.function.UnaryOperator;
 
 public class Basics {
 
@@ -44,13 +45,6 @@ public class Basics {
             }
         };
 
-        Function<Integer, Integer> functionImpl = new Function<Integer, Integer>() {
-            @Override
-            public Integer apply(Integer integer) {
-                return squared(integer);
-            }
-        };
-
         Consumer<Integer> consumerImpl = new Consumer<Integer>() {
             @Override
             public void accept(Integer integer) {
@@ -58,10 +52,26 @@ public class Basics {
             }
         };
 
-        Supplier<Double> supplyDouble = new Supplier<Double>() {
+        Supplier<Double> supplyImpl = new Supplier<Double>() {
             @Override
             public Double get() {
                 return getRandomDouble();
+            }
+        };
+
+        Function<Integer, Double> functionImpl = new Function<Integer, Double>() {
+            @Override
+            public Double apply(Integer integer) {
+                return integer.doubleValue();
+            }
+        };
+
+        // Unary operator - an operation on a single operand that produces a result of the same type as its operand.
+        // This is a specialization of Function for the case where the operand and result are of the same type.
+        UnaryOperator<Integer> unaryOperatorImpl = new UnaryOperator<Integer>() {
+            @Override
+            public Integer apply(Integer integer) {
+                return squared(integer);
             }
         };
 
@@ -79,7 +89,7 @@ public class Basics {
     // public abstract Stream<T> filter(java.util.function.Predicate<? super T> predicate)
 
 
-    // function.Function = Represents a function that accepts one argument and produces a result.
+    // function.Function = Represents a function that accepts one argument and produces a result (can be same or different type - operator have the same type for input and output).
     private static int squared(int x) {
         return x * x;
     }

@@ -23,13 +23,16 @@ public class ChangingStateWithPeek {
         numbers.add(1);
         letters.add('a');
         Stream<List<?>> stream = Stream.of(numbers, letters);
-        stream.map(List::size).forEach(System.out::print); // 11
+        stream.map(List::size).forEach(System.out::print); // for each list print sizes: 11
 
 
 
         Stream<List<?>> bad = Stream.of(numbers, letters);
         bad.peek(x -> x.remove(0))
                 .map(List::size)
-                .forEach(System.out::print); // 00
+                .forEach(System.out::print); // after removing first element from eah list: 00
+
+        // peek() should be used for debugging or logging, not for modifying the underlying data,
+        // as it can cause side effects and unpredictable results.
     }
 }

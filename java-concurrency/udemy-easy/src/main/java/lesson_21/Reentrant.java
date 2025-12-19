@@ -25,25 +25,14 @@ public class Reentrant {
             }
         } finally {
             lock.unlock();
-            // in order to make sure that we will unlock no mather what (or else we will get a deadlock)
+            // in order to make sure that we will unlock no matter what (or else we will get a deadlock)
         }
     }
 
 
     public static void main(String[] args) {
-         Thread t1 = new Thread(new Runnable() {
-             @Override
-             public void run() {
-                increment();
-             }
-         });
-
-        Thread t2 = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                increment();
-            }
-        });
+        Thread t1 = new Thread(Reentrant::increment);
+        Thread t2 = new Thread(Reentrant::increment);
 
         t1.start();
         t2.start();

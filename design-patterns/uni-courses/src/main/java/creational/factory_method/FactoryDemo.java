@@ -2,7 +2,7 @@ package creational.factory_method;
 
 import lombok.Setter;
 
-public interface IItemsFamily {
+interface IItemsFamily {
 
     void doSomething();
 }
@@ -65,7 +65,7 @@ class SimpleFactory {
 }
 
 
-class FactoryDemo {
+public class FactoryDemo {
 
     public static void main(String[] args) {
         Item1 item1 = (Item1) createAnItem(new FactoryItem1());
