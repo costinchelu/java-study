@@ -144,7 +144,7 @@ public class GroupingStringExamples {
                 .collect(groupingBy(String::length,
                                 mapping(toStringList(),
                                         flatMapping(s -> s.stream().distinct(),
-                                                filtering(s -> s.length() > 0,
+                                                filtering(s -> !s.isEmpty(),
                                                         mapping(String::toUpperCase,
                                                                 reducing("", (s, s2) -> s + s2)))))));
 

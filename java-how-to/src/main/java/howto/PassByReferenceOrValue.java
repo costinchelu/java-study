@@ -49,7 +49,8 @@ class DragonWarriorReferenceChallenger {
 
         changeWarriorClass(warriorProfession, warriorWeapon);
         /*
-        warriorProfession is indeed a mutable object. When it is passed to changeWarriorClass() a copy of the reference
+        warriorProfession is indeed a mutable object.
+        When it is passed to changeWarriorClass() a copy of the reference
         to the actual object in the heap is created (specifically for that method call). But a copy to that reference means
         that through that copy, we can still access the original object in the heap, as the original reference. So we can
         indeed modify it. But when we assign null to that reference, we are only assigning null to the copy and with
